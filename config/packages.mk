@@ -12,6 +12,16 @@ PRODUCT_PACKAGES += \
     setcap \
     vim
 
+# Openssh
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh \
+
 # YAAP packages
 PRODUCT_PACKAGES += \
     MatLog \
