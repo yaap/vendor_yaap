@@ -35,8 +35,17 @@ $(foreach f,$(wildcard vendor/yaap/prebuilt/common/etc/init/*.rc),\
 # Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
 
-# Don't include art debug targets
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+# Flags
+ifeq ($(TARGET_BUILD_VARIANT), user)
+    # Strip the local variable table and the local variable type table to reduce
+    # the size of the system image. This has no bearing on stack traces, but will
+    # leave less information available via JDWP.
+    PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
+    # Disable dexpreopt debug info
+    WITH_DEXPREOPT_DEBUG_INFO := false
+    # Don't include art debug targets
+    PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+endif
 
 # Dedupe VNDK libraries with identical core variants
 TARGET_VNDK_USE_CORE_VARIANT := true
@@ -67,11 +76,6 @@ PRODUCT_PACKAGES += \
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/yaap/prebuilt/common/etc/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
-
-# Strip the local variable table and the local variable type table to reduce
-# the size of the system image. This has no bearing on stack traces, but will
-# leave less information available via JDWP.
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Enable whole-program R8 Java optimizations for SystemUI and system_server,
 # but also allow explicit overriding for testing and development.
