@@ -27,6 +27,7 @@ PRODUCT_PACKAGES += \
 
 # DerpFest packages
 PRODUCT_PACKAGES += \
+    OmniRecord \
     Recorder
 
 # Filesystems tools
