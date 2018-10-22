@@ -6,6 +6,7 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 yaap: otapackage
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(YAAP_TARGET_PACKAGE)
 	$(hide) $(MD5) $(YAAP_TARGET_PACKAGE) | cut -d ' ' -f1 > $(YAAP_TARGET_PACKAGE).md5sum
+	$(hide) ./vendor/yaap/tools/generate_json_build_info.sh $(YAAP_TARGET_PACKAGE)
 	@echo -e ""
 	@echo -e "${cya}Building ${bldcya}YAAP${txtrst}";
 	@echo -e "	:::   :::   :::         :::     :::::::::  "
