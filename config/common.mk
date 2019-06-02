@@ -112,6 +112,10 @@ include vendor/aosip/config/packages.mk
 # Versioning
 include vendor/aosip/config/version.mk
 
+# SetupWizard overlay
+PRODUCT_PACKAGES += \
+    SetupWizardOverlay
+
 # GApps
 include vendor/gapps/config.mk
 
