@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
- * Copyright (c) 2009, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,10 @@
 -->
 <resources>
     <bool name="def_wifi_on">true</bool>
-    <!-- Googles Backup transport service -->
-    <string name="def_backup_transport">com.google.android.gms/.backup.BackupTransportService</string>
-</resources> 
+    <bool name="def_bluetooth_on">false</bool>
+    <bool name="def_vibrate_when_ringing">true</bool>
+    <bool name="def_notification_pulse">false</bool>
+    <bool name="def_screen_brightness_automatic_mode">true</bool>
+    <integer name="def_screen_brightness">82</integer>
+    <integer name="def_screen_off_timeout">30000</integer>
+</resources>

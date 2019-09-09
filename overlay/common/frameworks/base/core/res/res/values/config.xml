@@ -29,22 +29,6 @@
     <integer name="config_activityShortDur">75</integer>
     <integer name="config_activityDefaultDur">110</integer>
 
-    <string-array name="config_locationProviderPackageNames" translatable="false">
-        <!-- qcom provider -->
-        <item>com.qualcomm.location</item>
-        <!-- The Google provider -->
-        <item>com.google.android.gms</item>
-        <!-- The standard AOSP fused location provider -->
-        <item>com.android.location.fused</item>
-    </string-array>
-
-    <!-- non blockable notification packages -->
-    <string-array name="config_nonBlockableNotificationPackages">
-        <item>com.android.dialer</item>
-        <item>com.google.android.dialer</item>
-        <item>com.google.android.deskclock</item>
-    </string-array>
-
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
@@ -94,22 +78,12 @@
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
 
-    <!-- The component name, flattened to a string, for the default autofill service
-         to  enabled for an user. This service must be trusted, as it can be activated
-         without explicit consent of the user. If no autofill service with the
-          specified name exists on the device, autofill will be disabled by default.
-    -->
-    <string name="config_defaultAutofillService" translatable="false">com.google.android.gms/.autofill.service.AutofillService</string>
-
     <!-- The package name for the default wellbeing app.
          This package must be trusted, as it has the permissions to control other applications
          on the device.
          Example: "com.android.wellbeing"
      -->
     <string name="config_defaultWellbeingPackage">com.google.android.apps.wellbeing</string>
-
-    <!-- Flag indicating which package name can access the persistent data partition -->
-    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
 
     <!-- Whether action menu items should be displayed in ALLCAPS or not.
          Defaults to true. If this is not appropriate for specific locales
@@ -137,56 +111,4 @@
     <string name="config_headlineFontFeatureSettings">ss03</string>
     <string name="config_headlineFontFamilyMedium">google-sans-medium</string>
 
-    <!-- Colon separated list of package names that should be granted DND access -->
-    <string name="config_defaultDndAccessPackages" translatable="false">com.google.android.gms:com.google.android.GoogleCamera:com.google.intelligence.sense:com.google.android.settings.intelligence</string>
-
-    <!-- Taken from pixel -->
-    <string name="config_defaultListenerAccessPackages">com.google.android.apps.nexuslauncher:com.google.android.setupwizard:com.google.android.apps.pixelmigrate:com.google.android.as</string>
-    <string name="config_defaultAssistantAccessPackage">com.google.android.ext.services</string>
-    <string name="config_defaultTextClassifierPackage">com.google.android.as</string>
-    <string-array name="config_disabledUntilUsedPreinstalledImes">
-        <item>com.google.android.inputmethod.latin</item>
-        <item>com.google.android.apps.inputmethod.hindi</item>
-        <item>com.google.android.inputmethod.japanese</item>
-        <item>com.google.android.inputmethod.korean</item>
-        <item>com.google.android.inputmethod.pinyin</item>
-        <item>jp.co.omronsoft.iwnnime.ml</item>
-        <item>com.nuance.xt9.input</item>
-    </string-array>
-    <string-array name="config_allowedSecureInstantAppSettings">
-        <item>advertising_id</item>
-        <item>limit_ad_tracking</item>
-    </string-array>
-    <string-array name="vendor_required_apps_managed_device">
-        <item>com.android.vending</item>
-        <item>com.google.android.gms</item>
-        <item>com.google.android.contacts</item>
-        <item>com.google.android.googlequicksearchbox</item>
-        <item>com.google.android.launcher</item>
-        <item>com.android.launcher</item>
-        <item>com.google.android.dialer</item>
-        <item>com.google.android.apps.messaging</item>
-        <item>com.google.android.setupwizard</item>
-    </string-array>
-    <string-array name="vendor_required_apps_managed_profile">
-        <item>com.android.vending</item>
-        <item>com.google.android.gms</item>
-        <item>com.google.android.contacts</item>
-    </string-array>
-    <string-array name="vendor_required_apps_managed_user">
-        <item>com.android.vending</item>
-        <item>com.google.android.gms</item>
-        <item>com.google.android.contacts</item>
-        <item>com.google.android.googlequicksearchbox</item>
-        <item>com.google.android.launcher</item>
-        <item>com.android.launcher</item>
-        <item>com.google.android.dialer</item>
-        <item>com.google.android.apps.messaging</item>
-    </string-array>
-    <string-array name="config_batteryPackageTypeService">
-        <item>com.google.android.gms</item>
-        <item>com.google.android.apps.gcs</item>
-    </string-array>
-    <string name="config_timeZoneRulesDataPackage">com.google.android.timezone.data</string>
-    <string name="config_dreamsDefaultComponent">com.google.android.deskclock/com.android.deskclock.Screensaver</string>
 </resources>
