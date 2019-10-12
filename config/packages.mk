@@ -1,5 +1,6 @@
 # Required packages
 PRODUCT_PACKAGES += \
+    PixelThemes \
     ThemePicker \
     Updater
 
