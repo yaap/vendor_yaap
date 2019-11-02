@@ -13,10 +13,10 @@
 # limitations under the License.
 
 # Versioning System
-BUILD_DATE ?= $(shell date +%Y%m%d)
-TARGET_PRODUCT_SHORT := $(subst aosip_,,$(AOSIP_BUILDTYPE))
+BUILD_DATE := $(shell date +%Y%m%d)
+TARGET_PRODUCT_SHORT := $(subst Nitrogen_,,$(AOSIP_BUILDTYPE))
 
-AOSIP_BUILDTYPE ?= DerpFest-Beta
+AOSIP_BUILDTYPE ?= UNOFFICIAL_poad42
 AOSIP_BUILD_VERSION := 10
 AOSIP_VERSION := $(AOSIP_BUILD_VERSION)-$(AOSIP_BUILDTYPE)-$(AOSIP_BUILD)-$(BUILD_DATE)
 ROM_FINGERPRINT := AOSiP/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date -u +%H%M)
