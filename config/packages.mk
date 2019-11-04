@@ -1,6 +1,5 @@
 # Required packages
 PRODUCT_PACKAGES += \
-    LiveWallpapersPicker \
     ThemePicker \
     Updater
 
