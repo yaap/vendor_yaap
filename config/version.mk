@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Versioning System
-BUILD_DATE := $(shell date +%Y%m%d)
+BUILD_DATE ?= $(shell date +%Y%m%d)
 TARGET_PRODUCT_SHORT := $(subst aosip_,,$(AOSIP_BUILDTYPE))
 
 AOSIP_BUILDTYPE ?= DerpFest-Beta
