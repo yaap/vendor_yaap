@@ -29,7 +29,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OmniRecord \
     OmniStyle \
-    Recorder
+    Recorder \
+    WallpapersBReel2019
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
