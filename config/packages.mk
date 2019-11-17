@@ -33,7 +33,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OmniRecord \
     OmniStyle \
-    Recorder \
     WallpapersBReel2019
 
 # Filesystems tools
@@ -49,10 +48,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
-
-# Some permissions
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-recorder.xml:system/etc/permissions/privapp-permissions-recorder.xml
 
 # Accents
 PRODUCT_PACKAGES += \
