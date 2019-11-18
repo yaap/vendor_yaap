@@ -1,12 +1,5 @@
-# Required packages
 PRODUCT_PACKAGES += \
-    PixelThemes \
-    ThemePicker
-
-ifeq ($(AOSIP_BUILDTYPE), Official)
-    PRODUCT_PACKAGES += \
-        Updater
-endif
+    ThemePicker \
 
 # Extra tools in AOSiP
 PRODUCT_PACKAGES += \
