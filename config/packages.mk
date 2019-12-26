@@ -1,5 +1,6 @@
 PRODUCT_PACKAGES += \
     ThemePicker \
+    PixelLiveWallpaperPrebuilt \
 
 # Extra tools in AOSiP
 PRODUCT_PACKAGES += \
