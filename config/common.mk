@@ -107,19 +107,14 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Bootanimation
-include vendor/aosip/config/bootanimation.mk
+#include vendor/aosip/config/bootanimation.mk
 
-# GSans font
-include vendor/aosip/config/fonts.mk
 
 # Pixel sounds
 include vendor/aosip/config/sounds.mk
 
 # Packages
 include vendor/aosip/config/packages.mk
-
-# Themes
-#include vendor/aosip/config/themes.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
@@ -128,11 +123,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI \
     NexusLauncherRelease
-
-# PixelSetupWizard overlay
-PRODUCT_PACKAGES += \
-    PixelSetupWizardOverlay \
-    PixelSetupWizardAodOverlay
 
 # Themed bootanimation
 TARGET_MISC_BLOCK_OFFSET ?= 0
@@ -144,6 +134,3 @@ PRODUCT_PACKAGES += \
 
 # GApps
 include vendor/gapps/config.mk
-
-# Pixel Style
-include vendor/pixelstyle/config.mk
