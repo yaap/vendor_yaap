@@ -21,7 +21,7 @@ preserve_addon_d() {
   fi
 
     # Discard any scripts that aren't at least our version level
-    for f in /postinstall/tmp/addon.d/*sh; do
+    for f in /tmp/addon.d/*sh; do
       SCRIPT_VERSION=$(grep "^# ADDOND_VERSION=" $f | cut -d= -f2)
       if [ -z "$SCRIPT_VERSION" ]; then
         SCRIPT_VERSION=1
