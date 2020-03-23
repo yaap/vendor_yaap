@@ -92,4 +92,9 @@
         <permission name="android.permission.RECOVERY"/>
     </privapp-permissions>
 
+    <privapp-permissions package="org.omnirom.logcat">
+        <permission name="android.permission.READ_LOGS"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    </privapp-permissions>
+
 </permissions>
