@@ -14,6 +14,6 @@
 
 $(call inherit-product, build/target/product/aosp_x86_64.mk)
 
-include vendor/aosip/build/target/product/aosip_generic_target.mk
+include vendor/yaap/build/target/product/yaap_generic_target.mk
 
-PRODUCT_NAME := aosip_x86_64
+PRODUCT_NAME := yaap_x86_64

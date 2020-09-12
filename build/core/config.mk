@@ -1,5 +1,5 @@
 
-# Copyright (C) 2018 AOSiP
+# Copyright (C) 2018 YAAP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,6 +19,6 @@ SELINUX_IGNORE_NEVERALLOWS := true
 endif
 
 # Rules for QCOM targets
-include $(TOPDIR)vendor/aosip/build/core/qcom_target.mk
+include $(TOPDIR)vendor/yaap/build/core/qcom_target.mk
 
-BUILD_RRO_SYSTEM_PACKAGE := $(TOP)/vendor/aosip/build/core/system_rro.mk
+BUILD_RRO_SYSTEM_PACKAGE := $(TOP)/vendor/yaap/build/core/system_rro.mk

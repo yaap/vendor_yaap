@@ -1,4 +1,4 @@
-function __print_aosip_functions_help() {
+function __print_yaap_functions_help() {
 cat <<EOF
 Invoke ". build/envsetup.sh" from your shell to add the following functions to your environment:
 - lunch:     lunch <product_name>-<build_variant>
@@ -10,7 +10,7 @@ EOF
     local T=$(gettop)
     local A=""
     local i
-    for i in `cat $T/vendor/aosip/build/envsetup.sh | sed -n "/^[[:blank:]]*function /s/function \([a-z_]*\).*/\1/p" | sort | uniq`; do
+    for i in `cat $T/vendor/yaap/build/envsetup.sh | sed -n "/^[[:blank:]]*function /s/function \([a-z_]*\).*/\1/p" | sort | uniq`; do
       A="$A $i"
     done
     echo $A
@@ -43,27 +43,6 @@ function mk_timer()
     echo " ####"
     echo
     return $ret
-}
-
-function repopick()
-{
-    T=$(gettop)
-    $T/vendor/aosip/build/tools/repopick.py $@
-}
-
-function gerrit()
-{
-    if [ ! -d ".git" ]; then
-        echo -e "Please run this inside a git directory";
-    else
-        git remote rm gerrit 2>/dev/null;
-        [[ -z "${GERRIT_USER}" ]] && export GERRIT_USER=$(git config --get review.review.aosiprom.com.username);
-        if [[ -z "${GERRIT_USER}" ]]; then
-            git remote add gerrit $(git remote -v | grep -i "github\.com[:\/]AOSiP" | awk '{print $2}' | uniq | sed -e "s|.*github.com[:\/]AOSiP|ssh://review.aosiprom.com:29418/AOSIP|");
-        else
-            git remote add gerrit $(git remote -v | grep -i "github\.com[:\/]AOSiP" | awk '{print $2}' | uniq | sed -e "s|.*github.com[:\/]AOSiP|ssh://${GERRIT_USER}@review.aosiprom.com:29418/AOSIP|");
-        fi
-    fi
 }
 
 # Make using all available CPUs

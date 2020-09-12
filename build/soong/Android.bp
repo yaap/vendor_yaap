@@ -1,14 +1,14 @@
 bootstrap_go_package {
-    name: "soong-aosip",
-    pkgPath: "aosip/soong/android",
+    name: "soong-yaap",
+    pkgPath: "yaap/soong/android",
     srcs: [
         "android/variable.go",
     ],
 }
 
 bootstrap_go_package {
-    name: "soong-aosip-generator",
-    pkgPath: "aosip/soong/generator",
+    name: "soong-yaap-generator",
+    pkgPath: "yaap/soong/generator",
     deps: [
         "blueprint",
         "blueprint-pathtools",
@@ -23,7 +23,7 @@ bootstrap_go_package {
     pluginFor: ["soong_build"],
 }
 
-aosip_generator {
+yaap_generator {
     name: "generated_kernel_includes",
 
     // The headers make command

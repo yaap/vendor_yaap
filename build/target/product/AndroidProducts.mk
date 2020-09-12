@@ -15,13 +15,13 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosip_arm.mk \
-    $(LOCAL_DIR)/aosip_arm64.mk \
-    $(LOCAL_DIR)/aosip_x86.mk \
-    $(LOCAL_DIR)/aosip_x86_64.mk
+    $(LOCAL_DIR)/yaap_arm.mk \
+    $(LOCAL_DIR)/yaap_arm64.mk \
+    $(LOCAL_DIR)/yaap_x86.mk \
+    $(LOCAL_DIR)/yaap_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosip_arm-userdebug \
-    aosip_arm64-userdebug \
-    aosip_x86-userdebug \
-    aosip_x86_64-userdebug
+    yaap_arm-userdebug \
+    yaap_arm64-userdebug \
+    yaap_x86-userdebug \
+    yaap_x86_64-userdebug

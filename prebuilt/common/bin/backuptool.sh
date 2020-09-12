@@ -48,7 +48,7 @@ check_prereq() {
 if [ ! -r $S/build.prop ]; then
     return 0
 fi
- if [ ! grep -q "^ro.aosip.version=$V.*" $S/etc/prop.default $S/build.prop ]; then
+ if [ ! grep -q "^ro.yaap.version=$V.*" $S/etc/prop.default $S/build.prop ]; then
    echo "Not backing up files from incompatible version: $V"
    return 0
  fi

@@ -1,4 +1,4 @@
-# Copyright (C) 2016-2019 AOSiP
+# Copyright (C) 2020 YAAP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,23 +14,18 @@
 
 # Versioning System
 BUILD_DATE := $(shell date +%Y%m%d)
-TARGET_PRODUCT_SHORT := $(subst Nitrogen_,,$(AOSIP_BUILDTYPE))
+TARGET_PRODUCT_SHORT := $(subst Nitrogen_,,$(YAAP_BUILDTYPE))
 
-AOSIP_BUILDTYPE ?= UNOFFICIAL_poad42
-AOSIP_BUILD_VERSION := 10
-AOSIP_VERSION := $(AOSIP_BUILD_VERSION)-$(AOSIP_BUILDTYPE)-$(AOSIP_BUILD)-$(BUILD_DATE)
-ROM_FINGERPRINT := AOSiP/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date -u +%H%M)
+YAAP_BUILDTYPE ?= Foxtrot
+YAAP_BUILD_VERSION := 10
+YAAP_VERSION := $(YAAP_BUILD_VERSION)-$(YAAP_BUILDTYPE)-$(YAAP_BUILD)-$(BUILD_DATE)
+ROM_FINGERPRINT := YAAP/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date -u +%H%M)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.aosip.build.version=$(AOSIP_BUILD_VERSION) \
-  ro.aosip.build.date=$(BUILD_DATE) \
-  ro.aosip.buildtype=$(AOSIP_BUILDTYPE) \
-  ro.aosip.fingerprint=$(ROM_FINGERPRINT) \
-  ro.aosip.version=$(AOSIP_VERSION) \
-  ro.aosip.device=$(AOSIP_BUILD) \
-  ro.modversion=$(AOSIP_VERSION)
-
-ifneq ($(OVERRIDE_OTA_CHANNEL),)
-    PRODUCT_PROPERTY_OVERRIDES += \
-        aosip.updater.uri=$(OVERRIDE_OTA_CHANNEL)
-endif
+  ro.yaap.build.version=$(YAAP_BUILD_VERSION) \
+  ro.yaap.build.date=$(BUILD_DATE) \
+  ro.yaap.buildtype=$(YAAP_BUILDTYPE) \
+  ro.yaap.fingerprint=$(ROM_FINGERPRINT) \
+  ro.yaap.version=$(YAAP_VERSION) \
+  ro.yaap.device=$(YAAP_BUILD) \
+  ro.modversion=$(YAAP_VERSION)
