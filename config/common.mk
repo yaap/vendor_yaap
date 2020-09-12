@@ -135,4 +135,4 @@ PRODUCT_PACKAGES += \
     themed_bootanimation
 
 # GApps
-include vendor/gapps/config.mk
+-include vendor/gapps/config.mk
