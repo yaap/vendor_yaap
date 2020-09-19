@@ -1,7 +1,7 @@
 ORIG_PATH := $(shell cat $(OUT_DIR)/.path_interposer_origpath)
 # Add variables that we wish to make available to soong here.
 EXPORT_TO_SOONG := \
-	  ORIG_PATH \
+    ORIG_PATH \
     KERNEL_ARCH \
     KERNEL_BUILD_OUT_PREFIX \
     KERNEL_CROSS_COMPILE \
@@ -12,7 +12,7 @@ EXPORT_TO_SOONG := \
     TARGET_KERNEL_SOURCE \
     KERNEL_CLANG_TRIPLE \
     KERNEL_CC \
-    MAKE_PREBUILT 
+    MAKE_PREBUILT
 
 # Setup SOONG_CONFIG_* vars to export the vars listed above.
 # Documentation here:
@@ -23,8 +23,12 @@ SOONG_CONFIG_NAMESPACES += yaapVarsPlugin
 SOONG_CONFIG_yaapVarsPlugin :=
 
 define addVar
-  SOONG_CONFIG_yaapVarsPlugin += $(1)
-  SOONG_CONFIG_yaapVarsPlugin_$(1) := $$(subst ",\",$$($1))
+    SOONG_CONFIG_yaapVarsPlugin += $(1)
+    SOONG_CONFIG_yaapVarsPlugin_$(1) := $$(subst ",\",$$($1))
 endef
+
+ifneq ($(TARGET_USE_QTI_BT_STACK),true)
+PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
+endif #TARGET_USE_QTI_BT_STACK
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
