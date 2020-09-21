@@ -89,7 +89,7 @@ endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/etc/permissions/yaap-privapp-permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/yaap-privapp-permissions.xml \
+    vendor/yaap/prebuilt/common/etc/permissions/yaap-privapp-permissions.xml:system/etc/permissions/yaap-privapp-permissions.xml \
     vendor/yaap/prebuilt/common/etc/permissions/org.pixelexperience.weather.client.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.pixelexperience.weather.client.xml \
     vendor/yaap/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
