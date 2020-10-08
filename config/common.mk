@@ -134,3 +134,4 @@ PRODUCT_PACKAGES += \
     misc_writer_system \
     themed_bootanimation
 
+$(call inherit-product, vendor/themes/common.mk)
