@@ -124,7 +124,7 @@ include vendor/yaap/config/version.mk
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI \
-    NexusLauncherRelease
+    Launcher3QuickStep
 
 # Themed bootanimation
 TARGET_MISC_BLOCK_OFFSET ?= 0
@@ -134,5 +134,3 @@ PRODUCT_PACKAGES += \
     misc_writer_system \
     themed_bootanimation
 
-# GApps
--include vendor/gapps/config.mk
