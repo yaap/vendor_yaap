@@ -2,7 +2,7 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     PixelLiveWallpaperPrebuilt \
 
-# Extra tools in AOSiP
+# Extra tools in YAAP
 PRODUCT_PACKAGES += \
     7z \
     awk \
@@ -23,8 +23,9 @@ PRODUCT_PACKAGES += \
     wget \
     zip
 
-# DerpFest packages
+# YAAP packages
 PRODUCT_PACKAGES += \
+    MatLog \
     OmniRecord \
     WallpapersBReel2019 \
 
