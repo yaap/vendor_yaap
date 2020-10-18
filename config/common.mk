@@ -112,9 +112,6 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 #include vendor/yaap/config/bootanimation.mk
 
 
-# Pixel sounds
-include vendor/yaap/config/sounds.mk
-
 # Packages
 include vendor/yaap/config/packages.mk
 
