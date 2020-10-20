@@ -284,6 +284,14 @@ function write_product_copy_files() {
             local OUTTARGET=$(truncate_file $TARGET)
             printf '    %s/proprietary/%s:$(TARGET_COPY_OUT_PRODUCT)/%s%s\n' \
                 "$OUTDIR" "$TARGET" "$OUTTARGET" "$LINEEND" >> "$PRODUCTMK"
+        elif prefix_match_file "system_ext/" $TARGET ; then
+            local OUTTARGET=$(truncate_file $TARGET)
+            printf '    %s/proprietary/%s:$(TARGET_COPY_OUT_SYSTEM_EXT)/%s%s\n' \
+                "$OUTDIR" "$TARGET" "$OUTTARGET" "$LINEEND" >> "$PRODUCTMK"
+        elif prefix_match_file "system/system_ext/" $TARGET ; then
+            local OUTTARGET=$(truncate_file $TARGET)
+            printf '    %s/proprietary/%s:$(TARGET_COPY_OUT_SYSTEM_EXT)/%s%s\n' \
+                "$OUTDIR" "$TARGET" "$OUTTARGET" "$LINEEND" >> "$PRODUCTMK"
         elif prefix_match_file "odm/" $TARGET ; then
             local OUTTARGET=$(truncate_file $TARGET)
             printf '    %s/proprietary/%s:$(TARGET_COPY_OUT_ODM)/%s%s\n' \
@@ -320,7 +328,7 @@ function write_product_copy_files() {
 # write_blueprint_packages:
 #
 # $1: The LOCAL_MODULE_CLASS for the given module list
-# $2: /system, /odm, /product, or /vendor partition
+# $2: /system, /odm, /product, /system_ext, or /vendor partition
 # $3: type-specific extra flags
 # $4: Name of the array holding the target list
 #
@@ -344,6 +352,7 @@ function write_blueprint_packages() {
     local EXTENSION=
     local PKGNAME=
     local SRC=
+    local OVERRIDEPKG=
 
     for P in "${FILELIST[@]}"; do
         FILE=$(target_file "$P")
@@ -354,9 +363,6 @@ function write_blueprint_packages() {
         EXTENSION=${BASENAME##*.}
         PKGNAME=${BASENAME%.*}
 
-        # Add to final package list
-        PACKAGE_LIST+=("$PKGNAME")
-
         SRC="proprietary"
         if [ "$PARTITION" = "system" ]; then
             SRC+="/system"
@@ -364,11 +370,26 @@ function write_blueprint_packages() {
             SRC+="/vendor"
         elif [ "$PARTITION" = "product" ]; then
             SRC+="/product"
+        elif [ "$PARTITION" = "system_ext" ]; then
+            SRC+="/system_ext"
         elif [ "$PARTITION" = "odm" ]; then
             SRC+="/odm"
         fi
 
-        if [ "$CLASS" = "SHARED_LIBRARIES" ]; then
+        if [ "$CLASS" = "APEX" ]; then
+            ARGS=(${ARGS//;/ })
+            SRC="$SRC/apex"
+            printf 'prebuilt_apex {\n'
+            for ARG in "${ARGS[@]}"; do
+                if [[ "$ARG" =~ "PKGNAME" ]]; then
+                    PKGNAME=${ARG##*\=}
+                    printf '\tname: "%s",\n' "$PKGNAME"
+                fi
+            done
+            printf '\tsrc: "%s/%s",\n' "$SRC" "$FILE"
+            printf '\towner: "%s",\n' "${VENDOR%\/*}"
+            printf '\tfilename: "%s",\n' "$BASENAME"
+        elif [ "$CLASS" = "SHARED_LIBRARIES" ]; then
             printf 'cc_prebuilt_library_shared {\n'
             printf '\tname: "%s",\n' "$PKGNAME"
             printf '\towner: "%s",\n' "$VENDOR"
@@ -396,6 +417,7 @@ function write_blueprint_packages() {
             if [ "$EXTRA" != "none" ]; then
                 printf '\tcompile_multilib: "%s",\n' "$EXTRA"
             fi
+            printf '\tcheck_elf_files: false,\n'
         elif [ "$CLASS" = "APPS" ]; then
             printf 'android_app_import {\n'
             printf '\tname: "%s",\n' "$PKGNAME"
@@ -406,12 +428,21 @@ function write_blueprint_packages() {
                 SRC="$SRC/app"
             fi
             printf '\tapk: "%s/%s",\n' "$SRC" "$FILE"
-            if [ "$ARGS" = "PRESIGNED" ]; then
-                printf '\tpresigned: true,\n'
-            elif [ ! -z "$ARGS" ]; then
-                printf '\tcertificate: "%s",\n' "$ARGS"
-            else
+            ARGS=(${ARGS//;/ })
+            if [ -z "$ARGS" ]; then
                 printf '\tcertificate: "platform",\n'
+            else
+                for ARG in "${ARGS[@]}"; do
+                    if [ "$ARG" = "PRESIGNED" ]; then
+                        printf '\tpresigned: true,\n'
+                    elif [[ "$ARG" =~ "OVERRIDES" ]]; then
+                        OVERRIDEPKG=${ARG##*\=}
+                        OVERRIDEPKG=${OVERRIDEPKG//,/ }
+                        printf '\toverrides: ["%s"],\n' "$OVERRIDEPKG"
+                    elif [ ! -z "$ARG" ]; then
+                        printf '\tcertificate: "%s",\n' "$ARG"
+                    fi
+                done
             fi
         elif [ "$CLASS" = "JAVA_LIBRARIES" ]; then
             printf 'dex_import {\n'
@@ -427,6 +458,7 @@ function write_blueprint_packages() {
             printf '\tname: "%s",\n' "$PKGNAME"
             printf '\towner: "%s",\n' "$VENDOR"
             printf '\tsrc: "%s/etc/%s",\n' "$SRC" "$FILE"
+            printf '\tfilename_from_src: true,\n'
         elif [ "$CLASS" = "EXECUTABLES" ]; then
             if [ "$EXTENSION" = "sh" ]; then
                 printf 'sh_binary {\n'
@@ -466,7 +498,7 @@ function write_blueprint_packages() {
                 printf '\tsub_dir: "%s",\n' "$DIRNAME"
             fi
         fi
-        if [ "$CLASS" = "SHARED_LIBRARIES" ] || [ "$CLASS" = "EXECUTABLES" ] ; then
+        if [ "$CLASS" = "SHARED_LIBRARIES" ] || [ "$CLASS" = "EXECUTABLES" ] || [ "$CLASS" = "APEX" ] ; then
             printf '\tprefer: true,\n'
         fi
         if [ "$EXTRA" = "priv-app" ]; then
@@ -476,10 +508,15 @@ function write_blueprint_packages() {
             printf '\tsoc_specific: true,\n'
         elif [ "$PARTITION" = "product" ]; then
             printf '\tproduct_specific: true,\n'
+        elif [ "$PARTITION" = "system_ext" ]; then
+            printf '\tsystem_ext_specific: true,\n'
         elif [ "$PARTITION" = "odm" ]; then
             printf '\tdevice_specific: true,\n'
         fi
         printf '}\n\n'
+
+        # Add to final package list.
+        PACKAGE_LIST+=("$PKGNAME")
     done
 }
 
@@ -487,7 +524,7 @@ function write_blueprint_packages() {
 # write_makefile_packages:
 #
 # $1: The LOCAL_MODULE_CLASS for the given module list
-# $2: /odm, /product, or /vendor partition
+# $2: /odm, /product, /system_ext, or /vendor partition
 # $3: type-specific extra flags
 # $4: Name of the array holding the target list
 #
@@ -537,6 +574,8 @@ function write_makefile_packages() {
             SRC+="/vendor"
         elif [ "$PARTITION" = "product" ]; then
             SRC+="/product"
+        elif [ "$PARTITION" = "system_ext" ]; then
+            SRC+="/system_ext"
         elif [ "$PARTITION" = "odm" ]; then
             SRC+="/odm"
         fi
@@ -620,6 +659,8 @@ function write_makefile_packages() {
             printf 'LOCAL_VENDOR_MODULE := true\n'
         elif [ "$PARTITION" = "product" ]; then
             printf 'LOCAL_PRODUCT_MODULE := true\n'
+        elif [ "$PARTITION" = "system_ext" ]; then
+            printf 'LOCAL_SYSTEM_EXT_MODULE := true\n'
         elif [ "$PARTITION" = "odm" ]; then
             printf 'LOCAL_ODM_MODULE := true\n'
         fi
@@ -710,6 +751,22 @@ function write_product_packages() {
         write_blueprint_packages "SHARED_LIBRARIES" "product" "64" "P_LIB64" >> "$ANDROIDBP"
     fi
 
+    local T_SE_LIB32=( $(prefix_match "system_ext/lib/") )
+    local T_SE_LIB64=( $(prefix_match "system_ext/lib64/") )
+    local SE_MULTILIBS=( $(comm -12 <(printf '%s\n' "${T_SE_LIB32[@]}") <(printf '%s\n' "${T_SE_LIB64[@]}")) )
+    local SE_LIB32=( $(comm -23 <(printf '%s\n' "${T_SE_LIB32[@]}") <(printf '%s\n' "${SE_MULTILIBS[@]}")) )
+    local SE_LIB64=( $(comm -23 <(printf '%s\n' "${T_SE_LIB64[@]}") <(printf '%s\n' "${SE_MULTILIBS[@]}")) )
+
+    if [ "${#SE_MULTILIBS[@]}" -gt "0" ]; then
+        write_blueprint_packages "SHARED_LIBRARIES" "system_ext" "both" "SE_MULTILIBS" >> "$ANDROIDBP"
+    fi
+    if [ "${#SE_LIB32[@]}" -gt "0" ]; then
+        write_blueprint_packages "SHARED_LIBRARIES" "system_ext" "32" "SE_LIB32" >> "$ANDROIDBP"
+    fi
+    if [ "${#SE_LIB64[@]}" -gt "0" ]; then
+        write_blueprint_packages "SHARED_LIBRARIES" "system_ext" "64" "SE_LIB64" >> "$ANDROIDBP"
+    fi
+
     local T_O_LIB32=( $(prefix_match "odm/lib/") )
     local T_O_LIB64=( $(prefix_match "odm/lib64/") )
     local O_MULTILIBS=( $(comm -12 <(printf '%s\n' "${T_O_LIB32[@]}") <(printf '%s\n' "${T_O_LIB64[@]}")) )
@@ -724,6 +781,16 @@ function write_product_packages() {
     fi
     if [ "${#O_LIB64[@]}" -gt "0" ]; then
         write_blueprint_packages "SHARED_LIBRARIES" "odm" "64" "O_LIB64" >> "$ANDROIDBP"
+    fi
+
+    # Apex
+    local APEX=( $(prefix_match "apex/") )
+    if [ "${#APEX[@]}" -gt "0" ]; then
+        write_blueprint_packages "APEX" "" "" "APEX" >> "$ANDROIDBP"
+    fi
+    local S_APEX=( $(prefix_match "system/apex/") )
+    if [ "${#S_APEX[@]}" -gt "0" ]; then
+        write_blueprint_packages "APEX" "system" "" "S_APEX" >> "$ANDROIDBP"
     fi
 
     # Apps
@@ -759,6 +826,14 @@ function write_product_packages() {
     if [ "${#P_PRIV_APPS[@]}" -gt "0" ]; then
         write_blueprint_packages "APPS" "product" "priv-app" "P_PRIV_APPS" >> "$ANDROIDBP"
     fi
+    local SE_APPS=( $(prefix_match "system_ext/app/") )
+    if [ "${#SE_APPS[@]}" -gt "0" ]; then
+        write_blueprint_packages "APPS" "system_ext" "" "SE_APPS" >> "$ANDROIDBP"
+    fi
+    local SE_PRIV_APPS=( $(prefix_match "system_ext/priv-app/") )
+    if [ "${#SE_PRIV_APPS[@]}" -gt "0" ]; then
+        write_blueprint_packages "APPS" "system_ext" "priv-app" "SE_PRIV_APPS" >> "$ANDROIDBP"
+    fi
     local O_APPS=( $(prefix_match "odm/app/") )
     if [ "${#O_APPS[@]}" -gt "0" ]; then
         write_blueprint_packages "APPS" "odm" "" "O_APPS" >> "$ANDROIDBP"
@@ -785,6 +860,10 @@ function write_product_packages() {
     if [ "${#P_FRAMEWORK[@]}" -gt "0" ]; then
         write_blueprint_packages "JAVA_LIBRARIES" "product" "" "P_FRAMEWORK" >> "$ANDROIDBP"
     fi
+    local SE_FRAMEWORK=( $(prefix_match "system_ext/framework/") )
+    if [ "${#SE_FRAMEWORK[@]}" -gt "0" ]; then
+        write_blueprint_packages "JAVA_LIBRARIES" "system_ext" "" "SE_FRAMEWORK" >> "$ANDROIDBP"
+    fi
     local O_FRAMEWORK=( $(prefix_match "odm/framework/") )
     if [ "${#O_FRAMEWORK[@]}" -gt "0" ]; then
         write_blueprint_packages "JAVA_LIBRARIES" "odm" "" "O_FRAMEWORK" >> "$ANDROIDBP"
@@ -807,6 +886,10 @@ function write_product_packages() {
     if [ "${#P_ETC[@]}" -gt "0" ]; then
         write_blueprint_packages "ETC" "product" "" "P_ETC" >> "$ANDROIDBP"
     fi
+    local SE_ETC=( $(prefix_match "system_ext/etc/") )
+    if [ "${#SE_ETC[@]}" -gt "0" ]; then
+        write_blueprint_packages "ETC" "system_ext" "" "SE_ETC" >> "$ANDROIDBP"
+    fi
     local O_ETC=( $(prefix_match "odm/etc/") )
     if [ "${#O_ETC[@]}" -gt "0" ]; then
         write_blueprint_packages "ETC" "odm" "" "O_ETC" >> "$ANDROIDBP"
@@ -828,6 +911,10 @@ function write_product_packages() {
     local P_BIN=( $(prefix_match "product/bin/") )
     if [ "${#P_BIN[@]}" -gt "0" ]; then
         write_blueprint_packages "EXECUTABLES" "product" "" "P_BIN" >> "$ANDROIDBP"
+    fi
+    local SE_BIN=( $(prefix_match "system_ext/bin/") )
+    if [ "${#SE_BIN[@]}" -gt "0" ]; then
+        write_blueprint_packages "EXECUTABLES" "system_ext" "" "SE_BIN" >> "$ANDROIDBP"
     fi
     local O_BIN=( $(prefix_match "odm/bin/") )
     if [ "${#O_BIN[@]}" -gt "0" ]; then
@@ -1481,7 +1568,7 @@ function extract() {
                 exit 1
             fi
 
-            for PARTITION in "system" "odm" "product" "vendor"
+            for PARTITION in "system" "odm" "product" "system_ext" "vendor"
             do
                 # If OTA is block based, extract it.
                 if [ -a "$DUMPDIR"/"$PARTITION".new.dat.br ]; then
