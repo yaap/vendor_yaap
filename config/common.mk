@@ -131,4 +131,10 @@ PRODUCT_PACKAGES += \
     misc_writer_system \
     themed_bootanimation
 
+ifeq ($(TARGET_BUILD_GAPPS),true)
+    $(call inherit-product-if-exists, vendor/google/gms/config.mk)
+    $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
+    $(call inherit-product, vendor/prebuilts/config/apex.mk)
+endif
+
 $(call inherit-product, vendor/themes/common.mk)
