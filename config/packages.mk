@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
     MatLog \
     OmniRecord \
     WallpapersBReel2019 \
+    OpenDelta \
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
