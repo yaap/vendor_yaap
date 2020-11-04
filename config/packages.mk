@@ -41,3 +41,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
+
+# Config
+PRODUCT_PACKAGES += \
+    SimpleDeviceConfig
