@@ -7,7 +7,16 @@ yaap: otapackage
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(YAAP_TARGET_PACKAGE)
 	$(hide) $(MD5) $(YAAP_TARGET_PACKAGE) | cut -d ' ' -f1 > $(YAAP_TARGET_PACKAGE).md5sum
 	@echo -e ""
-	@echo -e "${cya}Building ${bldcya}YAAP OS ${txtrst}";
+	@echo -e "${cya}Building ${bldcya}YAAP${txtrst}";
+	@echo -e "	:::   :::   :::         :::     :::::::::  "
+	@echo -e "	:+:   :+: :+: :+:     :+: :+:   :+:    :+: "
+	@echo -e "	 +:+ +:+ +:+   +:+   +:+   +:+  +:+    +:+ "
+	@echo -e "	  +#++: +#++:++#++: +#++:++#++: +#++:++#+  "
+	@echo -e "	   +#+  +#+     +#+ +#+     +#+ +#+        "
+	@echo -e "	   #+#  #+#     #+# #+#     #+# #+#        "
+	@echo -e "	   ###  ###     ### ###     ### ###        "
+	@echo -e "		Yet Another AOSP Project			   "
+	@echo -e ""
 	@echo -e "zip: "$(YAAP_TARGET_PACKAGE)
 	@echo -e "md5: "${cya}" `cat $(YAAP_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"
 	@echo -e "size:`ls -lah $(YAAP_TARGET_PACKAGE) | cut -d ' ' -f 5`"
