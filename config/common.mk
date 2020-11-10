@@ -106,7 +106,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/common
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Bootanimation
-#include vendor/yaap/config/bootanimation.mk
+include vendor/yaap/config/bootanimation.mk
 
 
 # Packages
