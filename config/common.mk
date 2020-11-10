@@ -58,13 +58,6 @@ endif
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Configs
-PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/etc/sysconfig/yaap-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/yaap-power-whitelist.xml \
-    vendor/yaap/prebuilt/common/etc/sysconfig/dialer_experience.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/dialer_experience.xml \
-    vendor/yaap/prebuilt/common/etc/sysconfig/turbo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/turbo.xml \
-    vendor/yaap/prebuilt/common/etc/sysconfig/org.pixelexperience.weather.client-default.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default-permissions/org.pixelexperience.weather.client.xml
-
 # Copy all AOSiP-specific init rc files
 $(foreach f,$(wildcard vendor/yaap/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
@@ -96,8 +89,6 @@ endif
 # Permissions
 PRODUCT_COPY_FILES += \
     vendor/yaap/prebuilt/common/etc/permissions/yaap-privapp-permissions.xml:system/etc/permissions/yaap-privapp-permissions.xml \
-    vendor/yaap/prebuilt/common/etc/permissions/org.pixelexperience.weather.client.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.pixelexperience.weather.client.xml \
-    vendor/yaap/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \

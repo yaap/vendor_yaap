@@ -1,6 +1,5 @@
 PRODUCT_PACKAGES += \
     ThemePicker \
-    PixelLiveWallpaperPrebuilt \
 
 # Extra tools in YAAP
 PRODUCT_PACKAGES += \
@@ -26,8 +25,6 @@ PRODUCT_PACKAGES += \
 # YAAP packages
 PRODUCT_PACKAGES += \
     MatLog \
-    OmniRecord \
-    WallpapersBReel2019 \
     OpenDelta \
 
 # Filesystems tools
