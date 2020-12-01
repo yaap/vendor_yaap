@@ -108,7 +108,6 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # Bootanimation
 include vendor/yaap/config/bootanimation.mk
 
-
 # Packages
 include vendor/yaap/config/packages.mk
 
@@ -125,5 +124,10 @@ ifeq ($(TARGET_BUILD_GAPPS),true)
     $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
     $(call inherit-product, vendor/prebuilts/config/apex.mk)
 endif
+
+#OTA tools
+PRODUCT_HOST_PACKAGES += \
+    signapk \
+    brotli
 
 $(call inherit-product, vendor/themes/common.mk)
