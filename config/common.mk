@@ -125,6 +125,10 @@ ifeq ($(TARGET_BUILD_GAPPS),true)
     $(call inherit-product, vendor/prebuilts/config/apex.mk)
 endif
 
+ifneq ($(TARGET_BUILD_GAPPS),true)
+    PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/no_apex
+endif
+
 #OTA tools
 PRODUCT_HOST_PACKAGES += \
     signapk \
