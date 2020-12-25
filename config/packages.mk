@@ -8,6 +8,7 @@ PRODUCT_PACKAGES += \
     bash \
     bzip2 \
     curl \
+    e2fsprogs \
     getcap \
     htop \
     lib7z \
