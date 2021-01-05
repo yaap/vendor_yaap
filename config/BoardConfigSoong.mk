@@ -28,10 +28,10 @@ SOONG_CONFIG_lineageGlobalVars += \
 
 SOONG_CONFIG_NAMESPACES += lineageQcomVars
 
-# Only create soong_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
+# Only create display_headers_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
 ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
 SOONG_CONFIG_lineageQcomVars += \
-    qcom_soong_namespace
+    qcom_display_headers_namespace
 endif
 
 define addVar
@@ -47,8 +47,10 @@ TARGET_SURFACEFLINGER_FOD_LIB ?= surfaceflinger_fod_lib
 SOONG_CONFIG_lineageGlobalVars_bootloader_message_offset := $(BOOTLOADER_MESSAGE_OFFSET)
 SOONG_CONFIG_lineageGlobalVars_target_surfaceflinger_fod_lib := $(TARGET_SURFACEFLINGER_FOD_LIB)
 
-ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
-SOONG_CONFIG_lineageQcomVars_qcom_soong_namespace := $(QCOM_SOONG_NAMESPACE)
+ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+SOONG_CONFIG_lineageQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
+else
+SOONG_CONFIG_lineageQcomVars_qcom_display_headers_namespace := $(QCOM_SOONG_NAMESPACE)/display
 endif
 
 ifneq ($(TARGET_USE_QTI_BT_STACK),true)
