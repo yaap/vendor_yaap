@@ -101,6 +101,7 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/common
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
