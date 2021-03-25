@@ -19,13 +19,37 @@ EXPORT_TO_SOONG := \
 # https://github.com/LineageOS/android_build_soong/commit/8328367c44085b948c003116c0ed74a047237a69
 
 SOONG_CONFIG_NAMESPACES += yaapVarsPlugin
-
 SOONG_CONFIG_yaapVarsPlugin :=
+
+SOONG_CONFIG_NAMESPACES += lineageGlobalVars
+SOONG_CONFIG_lineageGlobalVars += \
+    bootloader_message_offset \
+    target_surfaceflinger_fod_lib
+
+SOONG_CONFIG_NAMESPACES += lineageQcomVars
+
+# Only create soong_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
+ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+SOONG_CONFIG_lineageQcomVars += \
+    qcom_soong_namespace
+endif
 
 define addVar
     SOONG_CONFIG_yaapVarsPlugin += $(1)
     SOONG_CONFIG_yaapVarsPlugin_$(1) := $$(subst ",\",$$($1))
 endef
+
+# Set default values
+BOOTLOADER_MESSAGE_OFFSET ?= 0
+TARGET_SURFACEFLINGER_FOD_LIB ?= surfaceflinger_fod_lib
+
+# Soong value variables
+SOONG_CONFIG_lineageGlobalVars_bootloader_message_offset := $(BOOTLOADER_MESSAGE_OFFSET)
+SOONG_CONFIG_lineageGlobalVars_target_surfaceflinger_fod_lib := $(TARGET_SURFACEFLINGER_FOD_LIB)
+
+ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
+SOONG_CONFIG_lineageQcomVars_qcom_soong_namespace := $(QCOM_SOONG_NAMESPACE)
+endif
 
 ifneq ($(TARGET_USE_QTI_BT_STACK),true)
 PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
