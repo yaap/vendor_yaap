@@ -124,10 +124,6 @@ ifeq ($(TARGET_BUILD_GAPPS),true)
     $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 endif
 
-ifneq ($(TARGET_BUILD_GAPPS),true)
-    PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/no_apex
-endif
-
 #OTA tools
 PRODUCT_HOST_PACKAGES += \
     signapk \
