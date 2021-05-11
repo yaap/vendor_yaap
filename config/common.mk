@@ -125,8 +125,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 ifeq ($(TARGET_BUILD_GAPPS),true)
     $(call inherit-product-if-exists, vendor/google/gms/config.mk)
-    $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 endif
+
+$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 
 #OTA tools
 PRODUCT_HOST_PACKAGES += \
