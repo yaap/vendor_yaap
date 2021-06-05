@@ -32,7 +32,7 @@ DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
 custom_local_manifest = ".repo/local_manifests/yaap_manifest.xml"
-custom_default_revision = "ten"
+custom_default_revision = "eleven"
 custom_dependencies = "yaap.dependencies"
 org_manifest =   # leave empty if org is provided in manifest
 org_display = "YAAP"  # needed for displaying
