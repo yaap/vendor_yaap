@@ -28,6 +28,11 @@ PRODUCT_PACKAGES += \
     MatLog \
     OpenDelta \
 
+ifneq ($(TARGET_BUILD_GAPPS),true)
+PRODUCT_PACKAGES += \
+    Jelly
+endif
+
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.exfat \
