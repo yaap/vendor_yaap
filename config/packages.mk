@@ -5,22 +5,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     7z \
     awk \
-    bash \
     bzip2 \
     curl \
-    e2fsprogs \
     getcap \
     htop \
     lib7z \
     libsepol \
     nano \
     pigz \
-    powertop \
     setcap \
     unrar \
-    unzip \
     vim \
-    wget \
     zip
 
 # YAAP packages
