@@ -109,6 +109,11 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.iorapd.enable=true
 
+# Disable touch video heatmap to reduce latency, motion jitter, and CPU usage
+# on supported devices with Deep Press input classifier HALs and models
+PRODUCT_PRODUCT_PROPERTIES += \
+	ro.input.video_enabled=false
+
 # Bootanimation
 include vendor/yaap/config/bootanimation.mk
 
