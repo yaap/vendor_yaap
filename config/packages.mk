@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
 
 ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGES += \
+    Etar \
     Jelly
 endif
 
