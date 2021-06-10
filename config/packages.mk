@@ -4,8 +4,6 @@ PRODUCT_PACKAGES += \
 # Extra tools in YAAP
 PRODUCT_PACKAGES += \
     7z \
-    awk \
-    bzip2 \
     curl \
     getcap \
     htop \
