@@ -89,6 +89,10 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/yaap/prebuilt/common/etc/permissions/yaap-privapp-permissions.xml:system/etc/permissions/yaap-privapp-permissions.xml \
 
+# Power whitelist
+PRODUCT_COPY_FILES += \
+    vendor/yaap/config/permissions/yaap-power-whitelist.xml:system/etc/sysconfig/yaap-power-whitelist.xml
+
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/yaap/prebuilt/common/etc/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
