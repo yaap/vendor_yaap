@@ -149,6 +149,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.launcher.blur.appLaunch=0
 endif
 
+# FCM
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/yaap/config/device_framework_matrix.xml
+
 # EGL - Blobcache configuration
 PRODUCT_VENDOR_PROPERTIES += \
     ro.egl.blobcache.multifile=true \
