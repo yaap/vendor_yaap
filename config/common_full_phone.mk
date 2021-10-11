@@ -25,3 +25,7 @@ PRODUCT_COPY_FILES += \
 # https://source.android.com/devices/tech/connect/quick-access-wallet
 PRODUCT_PACKAGES += \
     QuickAccessWallet
+
+# Enable support of one-handed mode
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.support_one_handed_mode=true
