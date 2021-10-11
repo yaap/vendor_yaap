@@ -28,13 +28,6 @@ PRODUCT_PACKAGES += \
     messaging
 endif
 
-# Filesystems tools
-PRODUCT_PACKAGES += \
-    fsck.ntfs \
-    mke2fs \
-    mkfs.ntfs \
-    mount.ntfs
-
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
