@@ -32,13 +32,7 @@ endif
 
 #Set Network Hostname
 PRODUCT_PROPERTY_OVERRIDES += \
-    net.hostname=$(TARGET_VENDOR_DEVICE_NAME) \
-
-#Blurr
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.sf.blurs_are_expensive=1 \
-    ro.surface_flinger.supports_background_blur=1 \
-    persist.sys.sf.disable_blurs=1
+    net.hostname=$(TARGET_VENDOR_DEVICE_NAME)
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -61,7 +55,7 @@ endif
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Copy all AOSiP-specific init rc files
+# Copy all YAAP-specific init rc files
 $(foreach f,$(wildcard vendor/yaap/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
@@ -70,13 +64,6 @@ EXCLUDE_SYSTEMUI_TESTS := true
 
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-
-# Include SDCLANG definitions if it is requested and available
-ifeq ($(HOST_OS),linux)
-    ifneq ($(wildcard vendor/qcom/sdclang-4.0/),)
-        include vendor/yaap/sdclang/sdclang.mk
-    endif
-endif
 
 # LatinIME gesture typing
 ifeq ($(TARGET_ARCH),arm64)
