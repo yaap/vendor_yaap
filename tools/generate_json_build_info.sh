@@ -8,7 +8,7 @@ if [ "$1" ]; then
     file_name=$(basename "$file_path")
     if [ -f $file_path ]; then
         # only generate for official builds. unless forced with 'export FORCE_JSON=1'
-        if [[ $file_name == *"Rocinante"* ]] || [[ $FORCE_JSON == 1 ]]; then
+        if [[ $file_name == *"Scopuli"* ]] || [[ $FORCE_JSON == 1 ]]; then
             if [[ $FORCE_JSON == 1 ]]; then
                 echo -e "${GREEN}Forced generation of json${NC}"
             fi
