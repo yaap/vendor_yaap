@@ -106,14 +106,27 @@ include vendor/yaap/config/packages.mk
 # Versioning
 include vendor/yaap/config/version.mk
 
+# ART
 # Optimize everything for preopt
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
+# Don't preopt prebuilts
 DONT_DEXPREOPT_PREBUILTS := true
 
 ifeq ($(TARGET_SUPPORTS_64_BIT_APPS), true)
 # Use 64-bit dex2oat for better dexopt time.
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat64.enabled=true
+endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.dexopt.boot=verify \
+    pm.dexopt.first-boot=quicken \
+    pm.dexopt.install=speed-profile \
+    pm.dexopt.bg-dexopt=everything
+
+ifneq ($(AB_OTA_PARTITIONS),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.dexopt.ab-ota=quicken
 endif
 
 ifeq ($(TARGET_BUILD_GAPPS),true)
