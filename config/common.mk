@@ -106,10 +106,8 @@ include vendor/yaap/config/packages.mk
 # Versioning
 include vendor/yaap/config/version.mk
 
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Settings \
-    SystemUI \
-    Launcher3QuickStep
+# Optimize everything for preopt
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 
 ifeq ($(TARGET_BUILD_GAPPS),true)
     $(call inherit-product-if-exists, vendor/google/gms/config.mk)
