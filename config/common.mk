@@ -106,9 +106,9 @@ PRODUCT_COPY_FILES += \
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
-# Common overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/common
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/common
+# Product overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
