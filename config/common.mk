@@ -6,33 +6,18 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true \
     net.tethering.noprovisioning=true \
     persist.sys.disable_rescue=true \
-    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.carrier=unknown \
     ro.com.android.dataroaming=false \
-    ro.com.android.dateformat=MM-dd-yyyy \
-    ro.config.bt_sco_vol_steps=30 \
-    ro.config.media_vol_steps=30 \
-    ro.error.receiver.system.apps=com.google.android.gms \
     ro.opa.eligible_device=true \
     ro.setupwizard.enterprise_mode=1 \
     ro.storage_manager.enabled=true \
-    ro.com.google.ime.bs_theme=true \
-    ro.com.google.ime.theme_id=5 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
 
-ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.com.google.clientidbase=android-google
-else
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
-endif
-
 #Set Network Hostname
 PRODUCT_PROPERTY_OVERRIDES += \
-    net.hostname=$(TARGET_VENDOR_DEVICE_NAME) \
+    net.hostname=$(TARGET_VENDOR_DEVICE_NAME)
 
 #Blurr
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -61,9 +46,9 @@ endif
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Copy all AOSiP-specific init rc files
+# Copy all YAAP-specific init rc files
 $(foreach f,$(wildcard vendor/yaap/prebuilt/common/etc/init/*.rc),\
-	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
+    $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
@@ -71,15 +56,8 @@ EXCLUDE_SYSTEMUI_TESTS := true
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
-# Include SDCLANG definitions if it is requested and available
-ifeq ($(HOST_OS),linux)
-    ifneq ($(wildcard vendor/qcom/sdclang-4.0/),)
-        include vendor/yaap/sdclang/sdclang.mk
-    endif
-endif
-
 # LatinIME gesture typing
-ifeq ($(TARGET_ARCH),arm64)
+ifeq ($(TARGET_SUPPORTS_64_BIT_APPS),arm64)
 PRODUCT_COPY_FILES += \
     vendor/yaap/prebuilt/common/lib64/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinime.so \
     vendor/yaap/prebuilt/common/lib64/libjni_latinimegoogle.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinimegoogle.so
@@ -91,11 +69,8 @@ endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/etc/permissions/yaap-privapp-permissions.xml:system/etc/permissions/yaap-privapp-permissions.xml \
-
-# Power whitelist
-PRODUCT_COPY_FILES += \
-    vendor/yaap/config/permissions/yaap-power-whitelist.xml:system/etc/sysconfig/yaap-power-whitelist.xml
+    vendor/yaap/prebuilt/common/etc/permissions/yaap-privapp-permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/yaap-privapp-permissions.xml \
+    vendor/yaap/prebuilt/common/etc/permissions/yaap-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/yaap-power-whitelist.xml
 
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
@@ -120,7 +95,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Disable touch video heatmap to reduce latency, motion jitter, and CPU usage
 # on supported devices with Deep Press input classifier HALs and models
 PRODUCT_PRODUCT_PROPERTIES += \
-	ro.input.video_enabled=false
+    ro.input.video_enabled=false
 
 # Bootanimation
 include vendor/yaap/config/bootanimation.mk
@@ -146,5 +121,3 @@ $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 PRODUCT_HOST_PACKAGES += \
     signapk \
     brotli
-
-$(call inherit-product, vendor/themes/common.mk)
