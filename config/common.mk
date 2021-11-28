@@ -133,3 +133,6 @@ $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 PRODUCT_HOST_PACKAGES += \
     signapk \
     brotli
+
+# Themes
+$(call inherit-product, vendor/themes/common.mk)
