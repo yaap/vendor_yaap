@@ -3,18 +3,11 @@ PRODUCT_PACKAGES += \
 
 # Extra tools in YAAP
 PRODUCT_PACKAGES += \
-    7z \
     curl \
     getcap \
     htop \
-    lib7z \
     libsepol \
-    nano \
-    pigz \
-    setcap \
-    unrar \
-    vim \
-    zip
+    setcap
 
 # YAAP packages
 PRODUCT_PACKAGES += \
