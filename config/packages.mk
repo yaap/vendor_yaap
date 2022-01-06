@@ -19,14 +19,11 @@ PRODUCT_PACKAGES += \
     Etar \
     Jelly \
     LatinIME \
-    messaging
+    messaging \
+    SimpleDeviceConfig
 endif
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
-
-# Config
-PRODUCT_PACKAGES += \
-    SimpleDeviceConfig
