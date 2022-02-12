@@ -7,7 +7,9 @@ PRODUCT_PACKAGES += \
     getcap \
     htop \
     libsepol \
-    setcap
+    nano \
+    setcap \
+    vim
 
 # YAAP packages
 PRODUCT_PACKAGES += \
