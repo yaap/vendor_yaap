@@ -21,6 +21,7 @@ PRODUCT_PACKAGES += \
     Etar \
     Jelly \
     LatinIME \
+    GmsCompat \
     messaging
 endif
 
