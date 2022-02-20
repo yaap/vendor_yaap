@@ -32,3 +32,7 @@ PRODUCT_PACKAGES += \
 # Config
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
+
+# Repainter integration
+PRODUCT_PACKAGES += \
+    RepainterServicePriv
