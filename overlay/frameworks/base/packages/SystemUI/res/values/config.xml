@@ -46,4 +46,7 @@
 
     <!-- SystemUIFactory component -->
     <string name="config_systemUIFactoryComponent" translatable="false">com.yaap.android.systemui.YaapSystemUIFactory</string>
+
+    <!-- SystemUI vendor service, used in config_systemUIServiceComponents. -->
+    <string name="config_systemUIVendorServiceComponent" translatable="false">com.yaap.android.systemui.YaapServices</string>
 </resources>
