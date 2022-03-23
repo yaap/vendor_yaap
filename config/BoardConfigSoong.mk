@@ -28,7 +28,10 @@ SOONG_CONFIG_lineageGlobalVars += \
     target_surfaceflinger_udfps_lib \
     target_init_vendor_lib \
     camera_needs_client_info_defaults \
-    target_camera_package_name
+    target_camera_package_name \
+    target_trust_usb_control_path \
+    target_trust_usb_control_enable \
+    target_trust_usb_control_disable
 
 SOONG_CONFIG_NAMESPACES += lineageQcomVars
 SOONG_CONFIG_lineageQcomVars += \
@@ -56,6 +59,9 @@ TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB ?= libperfmgr-ext
 TARGET_CAMERA_NEEDS_CLIENT_INFO ?= false
 TARGET_QTI_VIBRATOR_EFFECT_LIB ?= libqtivibratoreffect
+TARGET_TRUST_USB_CONTROL_PATH ?= /proc/sys/kernel/deny_new_usb
+TARGET_TRUST_USB_CONTROL_ENABLE ?= 1
+TARGET_TRUST_USB_CONTROL_DISABLE ?= 0
 
 # Soong value variables
 SOONG_CONFIG_lineageGlobalVars_camera_skip_kind_check := $(CAMERA_SKIP_KIND_CHECK)
@@ -70,7 +76,9 @@ SOONG_CONFIG_lineageGlobalVars_camera_needs_client_info_defaults := $(TARGET_CAM
 SOONG_CONFIG_lineageQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
 SOONG_CONFIG_lineageQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
 SOONG_CONFIG_lineageQcomVars_qti_vibrator_use_effect_stream := $(TARGET_QTI_VIBRATOR_USE_EFFECT_STREAM)
-
+SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_path := $(TARGET_TRUST_USB_CONTROL_PATH)
+SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_enable := $(TARGET_TRUST_USB_CONTROL_ENABLE)
+SOONG_CONFIG_lineageGlobalVars_target_trust_usb_control_disable := $(TARGET_TRUST_USB_CONTROL_DISABLE)
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
 SOONG_CONFIG_lineageQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
 else
