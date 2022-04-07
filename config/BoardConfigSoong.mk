@@ -1,4 +1,6 @@
+ifneq (,$(wildcard $(OUT_DIR)/.path_interposer_origpath))
 ORIG_PATH := $(shell cat $(OUT_DIR)/.path_interposer_origpath)
+endif
 # Add variables that we wish to make available to soong here.
 EXPORT_TO_SOONG := \
     ORIG_PATH \
