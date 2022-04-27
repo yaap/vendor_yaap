@@ -22,6 +22,8 @@ PRODUCT_PACKAGES += \
     Jelly \
     LatinIME \
     GmsCompat \
+    Seedvault \
+    Apps \
     messaging
 endif
 
