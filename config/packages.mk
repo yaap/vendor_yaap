@@ -23,7 +23,7 @@ PRODUCT_PACKAGES += \
     GmsCompat \
     Jelly \
     LatinIME \
-    messaging
+    messaging \
     Seedvault \
     SetupWizard
 endif
