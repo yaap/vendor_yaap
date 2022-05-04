@@ -18,13 +18,14 @@ PRODUCT_PACKAGES += \
 
 ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGES += \
+    Apps \
     Etar \
+    GmsCompat \
     Jelly \
     LatinIME \
-    GmsCompat \
+    messaging \
     Seedvault \
-    Apps \
-    messaging
+    SetupWizard
 endif
 
 # Include explicitly to work around GMS issues
