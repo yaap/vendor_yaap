@@ -111,6 +111,11 @@
         <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.history.HistoryActivity</item>
     </string-array>
 
+    <string-array name="config_locationExtraPackageNames" translatable="false">
+        <!-- TeleService -->
+        <item>com.android.phone</item>
+    </string-array>
+
     <!-- Default value for performant auth feature. -->
     <bool name="config_performantAuthDefault">true</bool>
 
