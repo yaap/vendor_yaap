@@ -116,6 +116,8 @@
         <item>com.android.phone</item>
         <!-- Bluetooth -->
         <item>com.android.bluetooth</item>
+        <!-- CneApp -->
+        <item>com.qualcomm.qti.cne</item>
     </string-array>
 
     <!-- Default value for performant auth feature. -->
