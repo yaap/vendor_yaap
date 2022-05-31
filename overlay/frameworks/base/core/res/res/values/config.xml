@@ -114,6 +114,8 @@
     <string-array name="config_locationExtraPackageNames" translatable="false">
         <!-- TeleService -->
         <item>com.android.phone</item>
+        <!-- Bluetooth -->
+        <item>com.android.bluetooth</item>
     </string-array>
 
     <!-- Default value for performant auth feature. -->
