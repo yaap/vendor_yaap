@@ -19,6 +19,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Strings for PixelPropUtils -->
      <string name="build_device">raven</string>
-     <string name="build_fp">google/raven/raven:12/SQ3A.220605.009.B1/8650216:user/release-keys</string>
+     <string name="build_fp">google/raven/raven:12/SQ3A.220705.003/8671607:user/release-keys</string>
      <string name="build_model">Pixel 6 Pro</string>
 </resources>
