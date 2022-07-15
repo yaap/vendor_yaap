@@ -124,6 +124,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     pm.dexopt.ab-ota=verify
 endif
 
+# Disable async MTE on system_server
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    arm64.memtag.process.system_server=off
+
 ifneq ($(wildcard vendor/google/modules/.),)
 # Flatten APEXs for performance
 OVERRIDE_TARGET_FLATTEN_APEX := true
