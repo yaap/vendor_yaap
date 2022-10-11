@@ -40,7 +40,8 @@ PRODUCT_PACKAGES += \
     TrichromeChrome \
     Recorder \
     Seedvault \
-    OpenDelta
+    OpenDelta \
+    BatteryStatsViewer
 
 # TextClassifier
 PRODUCT_PACKAGES += \
