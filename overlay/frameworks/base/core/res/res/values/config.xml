@@ -103,4 +103,19 @@
 
     <!-- Default component for QR code scanner -->
     <string name="config_defaultQrCodeComponent">com.android.camera2/org.lineageos.quickreader.ScannerActivity</string>
+
+    <!-- Limit these apps to 60 Hz to save power -->
+    <string-array name="config_highRefreshRateBlacklist">
+        <item>com.server.auditor.ssh.client</item>
+        <item>com.sonelli.juicessh</item>
+        <item>com.termux</item>
+        <item>jackpal.androidterm</item>
+        <item>org.connectbot</item>
+        <item>yarolegovich.materialterminal</item>
+        <item>com.mxtech.videoplayer.ad</item>
+        <item>com.mxtech.videoplayer.pro</item>
+        <item>org.videolan.vlc</item>
+        <item>com.amazon.kindle</item>
+        <item>com.google.android.apps.books</item>
+    </string-array>
 </resources>
