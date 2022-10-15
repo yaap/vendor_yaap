@@ -20,7 +20,13 @@ PRODUCT_PACKAGES += \
     sshd \
     sshd_config \
     ssh-keygen \
-    start-ssh \
+    start-ssh
+
+# Filesystems tools
+PRODUCT_PACKAGES += \
+    fsck.ntfs \
+    mkfs.ntfs \
+    mount.ntfs
 
 # YAAP packages
 PRODUCT_PACKAGES += \
