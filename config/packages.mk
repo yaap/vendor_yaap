@@ -3,6 +3,7 @@ PRODUCT_PACKAGES += \
 
 # Extra tools in YAAP
 PRODUCT_PACKAGES += \
+    bash \
     curl \
     getcap \
     htop \
