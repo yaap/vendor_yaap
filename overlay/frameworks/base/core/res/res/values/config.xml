@@ -102,7 +102,7 @@
     <bool name="config_enableBurnInProtection">true</bool>
 
     <!-- Default component for QR code scanner -->
-    <string name="config_defaultQrCodeComponent">com.android.camera2/org.lineageos.quickreader.ScannerActivity</string>
+    <string name="config_defaultQrCodeComponent">com.google.android.gms/.mlkit.barcode.ui.PlatformBarcodeScanningActivityProxy</string>
 
     <!-- Limit these apps to 60 Hz to save power -->
     <string-array name="config_highRefreshRateBlacklist">
