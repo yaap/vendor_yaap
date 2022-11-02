@@ -117,5 +117,8 @@
         <item>org.videolan.vlc</item>
         <item>com.amazon.kindle</item>
         <item>com.google.android.apps.books</item>
+        <item>com.google.android.youtube</item>
+        <item>com.disney.disneyplus</item>
+        <item>com.everbytestudio.escape.room.hidden.object.puzzle.games</item>
     </string-array>
 </resources>
