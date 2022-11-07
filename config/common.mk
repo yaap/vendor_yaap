@@ -50,6 +50,9 @@ EXCLUDE_SYSTEMUI_TESTS := true
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
+# Dedupe VNDK libraries with identical core variants
+TARGET_VNDK_USE_CORE_VARIANT := true
+
 # LatinIME gesture typing
 ifeq ($(TARGET_SUPPORTS_64_BIT_APPS),arm64)
 PRODUCT_COPY_FILES += \
