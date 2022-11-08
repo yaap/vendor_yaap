@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-	<!-- URL base to find .delta files, %s is expanded to property_device value. Path is suffixed by (expanded) filename_base -->
-	<string name="url_base_delta">https://mirror.codebucket.de/yaap/%s/delta/vanilla/</string>
-
 	<!-- URL base to find .update and .sign files, %s is expanded to property_device value. Path is suffixed by (expanded) filename_base -->
 	<string name="url_base_update">https://mirror.codebucket.de/yaap/%s/vanilla/</string>
 
@@ -13,8 +9,6 @@
 	<!-- URL base to find the full zip sha256sum files, %s is replaced to be property_device value. -->
 	<string name="url_base_full_sum">https://mirror.codebucket.de/yaap/%s/vanilla/</string>
 
-	<!-- URL base to fetch all builds. %s is replaced by (expanded) property_device -->
-	<string name="url_base_json" formatted="false">https://raw.githubusercontent.com/yaap/ota-info/twelve-vanilla/%s/%s.json</string>
-
-	<string name="official_version_tag">Vanilla</string>
+	<!-- the branch name to format URLs with -->
+	<string name="url_branch_name">twelve-vanilla</string>
 </resources>
