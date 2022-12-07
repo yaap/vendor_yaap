@@ -106,9 +106,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.input.video_enabled=false
 
-# Bootanimation
-include vendor/yaap/config/bootanimation.mk
-
 # Packages
 include vendor/yaap/config/packages.mk
 
