@@ -19,6 +19,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Strings for PixelPropUtils -->
      <string name="build_device">cheetah</string>
-     <string name="build_fp">google/cheetah/cheetah:13/TQ1A.221205.011/9244662:user/release-keys</string>
+     <string name="build_fp">google/cheetah/cheetah:13/TQ1A.230105.002/9325679:user/release-keys</string>
      <string name="build_model">Pixel 7 Pro</string>
 </resources>
