@@ -33,9 +33,9 @@ PRODUCT_PACKAGES += \
 
 # YAAP packages
 PRODUCT_PACKAGES += \
+    Aperture \
     MatLog \
-    OpenDelta \
-    PhotonCamera
+    OpenDelta
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/curl \
