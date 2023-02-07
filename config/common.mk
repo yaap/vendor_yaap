@@ -19,21 +19,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     net.hostname=$(TARGET_VENDOR_DEVICE_NAME)
 
-# Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/yaap/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/yaap/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh
-
-ifneq ($(AB_OTA_PARTITIONS),)
-PRODUCT_COPY_FILES += \
-    vendor/yaap/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/yaap/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/yaap/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
-endif
 endif
 
 # Charger
