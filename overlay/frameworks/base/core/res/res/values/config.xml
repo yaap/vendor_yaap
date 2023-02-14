@@ -115,14 +115,8 @@
         <item>jackpal.androidterm</item>
         <item>org.connectbot</item>
         <item>yarolegovich.materialterminal</item>
-        <item>com.mxtech.videoplayer.ad</item>
-        <item>com.mxtech.videoplayer.pro</item>
-        <item>org.videolan.vlc</item>
         <item>com.amazon.kindle</item>
         <item>com.google.android.apps.books</item>
-        <item>com.google.android.youtube</item>
-        <item>com.disney.disneyplus</item>
-        <item>com.everbytestudio.escape.room.hidden.object.puzzle.games</item>
     </string-array>
 
     <!-- Name of the font family to use in the default lockscreen clock -->
