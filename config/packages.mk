@@ -55,11 +55,13 @@ PRODUCT_PACKAGES += \
     Etar \
     ExactCalculator \
     GmsCompat \
-    Jelly \
     LatinIME \
     messaging \
     Seedvault \
-    SetupWizard
+    SetupWizard \
+    TrichromeLibrary \
+    TrichromeWebView \
+    TrichromeChrome
 endif
 
 # Include explicitly to work around GMS issues
