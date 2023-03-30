@@ -21,7 +21,7 @@
     <string name="build_device">cheetah</string>
     <string name="build_fp">google/cheetah/cheetah:13/TQ2A.230305.008.C1/9619669:user/release-keys</string>
     <string name="build_model">Pixel 7 Pro</string>
-    <string name="persist_device">redfin</string>
-    <string name="persist_fp">google/redfin/redfin:13/TQ2A.230305.008.C1/9619669:user/release-keys</string>
-    <string name="persist_model">Pixel 5</string>
+    <string name="persist_device">raven</string>
+    <string name="persist_fp">google/raven/raven:13/TQ2A.230305.008.E1/9677224:user/release-keys</string>
+    <string name="persist_model">Pixel 6 Pro</string>
 </resources>
