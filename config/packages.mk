@@ -35,6 +35,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aperture \
     MatLog \
+    TrichromeLibrary \
+    TrichromeWebView \
+    TrichromeChrome \
     OpenDelta
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
@@ -56,10 +59,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     messaging \
     Seedvault \
-    SetupWizard \
-    TrichromeLibrary \
-    TrichromeWebView \
-    TrichromeChrome
+    SetupWizard
 endif
 
 # Include explicitly to work around GMS issues
