@@ -125,6 +125,16 @@ endif
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     arm64.memtag.process.system_server=off
 
+# Blur
+ifeq ($(TARGET_ENABLE_BLUR), true)
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1
+else
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.launcher.blur.appLaunch=0
+endif
+
 ifneq ($(wildcard vendor/google/modules/.),)
 # Flatten APEXs for performance
 OVERRIDE_TARGET_FLATTEN_APEX := true
