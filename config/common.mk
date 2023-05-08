@@ -147,6 +147,7 @@ ifeq ($(TARGET_BUILD_GAPPS),true)
     $(call inherit-product-if-exists, vendor/google/gms/common/gms-full.mk)
 else
     $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
+    $(call inherit-product, external/svox/svox_tts.mk)
 endif
 
 #OTA tools
