@@ -38,6 +38,7 @@ PRODUCT_PACKAGES += \
     TrichromeLibrary \
     TrichromeWebView \
     TrichromeChrome \
+    YAAPThemePicker \
     OpenDelta
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
