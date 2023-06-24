@@ -138,4 +138,7 @@
         <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.history.HistoryContentProvider</item>
         <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.history.HistoryActivity</item>
     </string-array>
+
+    <!-- Default value for performant auth feature. -->
+    <bool name="config_performantAuthDefault">true</bool>
 </resources>
