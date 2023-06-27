@@ -144,12 +144,12 @@ PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
 endif
 
 ifeq ($(TARGET_BUILD_GAPPS),true)
-    $(call inherit-product-if-exists, vendor/google/gms/common/gms-full.mk)
+    $(call inherit-product-if-exists, vendor/google/gms/config.mk)
 else
-    $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
     $(call inherit-product, external/svox/svox_tts.mk)
     $(call inherit-product, vendor/microg/products/gms.mk)
 endif
+$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 
 #OTA tools
 PRODUCT_HOST_PACKAGES += \
