@@ -120,6 +120,8 @@
 	<item>com.qualcomm.qti.cne</item>
         <!-- ImsService -->
         <item>com.shannon.imsservice</item>
+        <!-- MediaTek ImsService -->
+        <item>com.mediatek.ims</item>
     </string-array>
 
     <!-- Default value for performant auth feature. -->
