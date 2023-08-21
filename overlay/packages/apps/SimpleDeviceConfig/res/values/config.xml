@@ -24,8 +24,8 @@
 	<item>activity_manager/compact_full_rss_throttle_kb=12000</item>
 	<item>activity_manager/compact_proc_state_throttle=11</item>
 	<item>activity_manager/compact_statsd_sample_rate=0.0</item>
-	<item>activity_manager/max_cached_processes=64</item>
-	<item>activity_manager/max_empty_time_millis=1800000</item>
+	<item>activity_manager/max_cached_processes=4096</item>
+	<item>activity_manager/max_empty_time_millis=2678400000</item>
 	<item>activity_manager/oom_re_ranking_lru_weight=0.35</item>
 	<item>activity_manager/oom_re_ranking_number_to_re_rank=8</item>
 	<item>activity_manager/oom_re_ranking_rss_weight=0.15</item>
@@ -33,7 +33,7 @@
 	<item>activity_manager/push_messaging_over_quota_behavior=1</item>
 	<item>activity_manager/use_compaction=true</item>
 	<item>activity_manager/use_oom_re_ranking=false</item>
-	<item>activity_manager_native_boot/freeze_debounce_timeout=600000</item>
+	<item>activity_manager_native_boot/freeze_debounce_timeout=10000</item>
 	<item>activity_manager_native_boot/freeze_exempt_inst_pkg=true</item>
 	<item>activity_manager_native_boot/use_freezer=true</item>
 
