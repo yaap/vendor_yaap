@@ -37,6 +37,13 @@
 	<item>activity_manager_native_boot/freeze_exempt_inst_pkg=true</item>
 	<item>activity_manager_native_boot/use_freezer=true</item>
 
+	<!-- USAP Pool -->
+	<item>runtime_native/usap_pool_enabled=true</item>
+	<item>runtime_native/usap_pool_refill_delay_ms=3000</item>
+	<item>runtime_native/usap_pool_size_max=10</item>
+	<item>runtime_native/usap_pool_size_min=1</item>
+	<item>runtime_native/usap_refill_threshold=5</item>
+
 	<!-- Misc -->
 	<item>alarm_manager/lazy_batching=true</item>
 	<item>lmkd_native/thrashing_limit_critical=200</item>
