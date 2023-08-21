@@ -16,12 +16,92 @@
 -->
 <resources>
     <string-array name="configs_base">
- 
+
+	<!-- Activity Manager -->
+	<item>activity_manager/bg_current_drain_auto_restrict_abusive_apps_enabled=false</item>
+	<item>activity_manager/bg_prompt_fgs_on_long_running=false</item>
+	<item>activity_manager/compact_full_delta_rss_throttle_kb=8000</item>
+	<item>activity_manager/compact_full_rss_throttle_kb=12000</item>
+	<item>activity_manager/compact_proc_state_throttle=11</item>
+	<item>activity_manager/compact_statsd_sample_rate=0.0</item>
+	<item>activity_manager/max_cached_processes=64</item>
+	<item>activity_manager/max_empty_time_millis=1800000</item>
+	<item>activity_manager/oom_re_ranking_lru_weight=0.35</item>
+	<item>activity_manager/oom_re_ranking_number_to_re_rank=8</item>
+	<item>activity_manager/oom_re_ranking_rss_weight=0.15</item>
+	<item>activity_manager/oom_re_ranking_uses_weight=0.5</item>
+	<item>activity_manager/push_messaging_over_quota_behavior=1</item>
+	<item>activity_manager/use_compaction=true</item>
+	<item>activity_manager/use_oom_re_ranking=false</item>
+	<item>activity_manager_native_boot/freeze_debounce_timeout=600000</item>
+	<item>activity_manager_native_boot/freeze_exempt_inst_pkg=true</item>
+	<item>activity_manager_native_boot/use_freezer=true</item>
+
+	<!-- Misc -->
+	<item>alarm_manager/lazy_batching=true</item>
+	<item>lmkd_native/thrashing_limit_critical=200</item>
+	<item>runtime_native/use_app_image_startup_cache=true</item>
+	<item>surface_flinger_native_boot/SkiaTracingFeature__use_skia_tracing=false</item>
+	<item>storage_native_boot/dirty_reclaim_rate=0.5</item>
+	<item>storage_native_boot/fuse_enabled=1</item>
+	<item>storage_native_boot/lifetime_threshold=70</item>
+	<item>storage_native_boot/low_battery_level=20.0</item>
+	<item>storage_native_boot/min_gc_sleeptime=10000</item>
+	<item>storage_native_boot/min_segments_threshold=512</item>
+	<item>storage_native_boot/segment_reclaim_weight=1.0</item>
+	<item>storage_native_boot/take_over_get_content=true</item>
+	<item>storage_native_boot/target_dirty_ratio=80</item>
+	<item>storage_native_boot/transcode_compat_manifest=com.yelp.android,0,com.yy.biu,0,com.groupme.android,0,air.tv.douyu.android,0,com.baidu.mbaby,0,com.vlocker.locker,0,com.znxh.hyhuo,0,com.yixia.xiaokaxiu,0</item>
+
+	<!-- Intelligence Bubbles -->
+	<item>intelligence_bubbles/intelligence_bubbles_webref_superpacks_manifest_url_template=https://gstatic.com/matchmaker/demo/bubbles/20051000/2/en-us/superpacks_manifest.zip</item>
+	<item>intelligence_bubbles/intelligence_bubbles_webref_superpacks_manifest_version=20051000</item>
+
+	<!-- Text classifier -->
+	<item>textclassifier/generate_links_max_text_length=10000</item>
+	<item>textclassifier/manifest_download_max_attempts=3</item>
+	<item>textclassifier/manifest_download_required_network_type=UNMETERED</item>
+	<item>textclassifier/manifest_url_actions_suggestions_de-ch=https://www.gstatic.com/android/text_classifier/actions/q/v103/de_CH.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_de-li=https://www.gstatic.com/android/text_classifier/actions/q/v103/de_CH.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_de=https://www.gstatic.com/android/text_classifier/actions/q/v103/de.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_en=https://www.gstatic.com/android/text_classifier/actions/q/v104/en.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_es=https://www.gstatic.com/android/text_classifier/actions/q/v103/es.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_fr=https://www.gstatic.com/android/text_classifier/actions/q/v103/fr.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_it=https://www.gstatic.com/android/text_classifier/actions/q/v103/it.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_ja=https://www.gstatic.com/android/text_classifier/actions/q/v103/ja.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_ko=https://www.gstatic.com/android/text_classifier/actions/q/v103/ko.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_pt-br=https://www.gstatic.com/android/text_classifier/actions/q/v103/pt_BR.model.manifest</item>
+	<item>textclassifier/manifest_url_actions_suggestions_universal=https://www.gstatic.com/android/text_classifier/actions/q/v103/default.model.manifest</item>
+	<item>textclassifier/manifest_url_annotator_ar=https://www.gstatic.com/android/text_classifier/v904/ar.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_da=https://www.gstatic.com/android/text_classifier/v904/da.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_de=https://www.gstatic.com/android/text_classifier/v904/de.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_en=https://www.gstatic.com/android/text_classifier/v904/en.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_es=https://www.gstatic.com/android/text_classifier/v904/es.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_fr=https://www.gstatic.com/android/text_classifier/v904/fr.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_it=https://www.gstatic.com/android/text_classifier/v904/it.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_ja=https://www.gstatic.com/android/text_classifier/v904/ja.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_ko=https://www.gstatic.com/android/text_classifier/v904/ko.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_nb=https://www.gstatic.com/android/text_classifier/v904/no.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_nl=https://www.gstatic.com/android/text_classifier/v904/nl.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_nn=https://www.gstatic.com/android/text_classifier/v904/no.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_no=https://www.gstatic.com/android/text_classifier/v904/no.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_pl=https://www.gstatic.com/android/text_classifier/v904/pl.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_pt=https://www.gstatic.com/android/text_classifier/v904/pt.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_ru=https://www.gstatic.com/android/text_classifier/v904/ru.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_sv=https://www.gstatic.com/android/text_classifier/v904/sv.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_th=https://www.gstatic.com/android/text_classifier/v904/th.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_tr=https://www.gstatic.com/android/text_classifier/v904/tr.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_universal=https://www.gstatic.com/android/text_classifier/v904/universal.fb.manifest</item>
+	<item>textclassifier/manifest_url_annotator_zh=https://www.gstatic.com/android/text_classifier/v904/zh.fb.manifest</item>
+	<item>textclassifier/manifest_url_lang_id_universal=https://www.gstatic.com/android/text_classifier/langid/q/v1/model.smfb.manifest</item>
+	<item>textclassifier/model_download_backoff_delay_in_millis=3600000</item>
+	<item>textclassifier/model_download_manager_enabled=true</item>
+	<item>textclassifier/model_download_worker_max_attempts=5</item>
+
         <!-- Machine learning back gesture (requires TensorFlow model) -->
         <item>systemui/use_back_gesture_ml_model=true</item>
         <item>systemui/back_gesture_ml_model_name=backgesture</item>
         <item>systemui/back_gesture_ml_model_threshold=0.8</item>
-
 
         <!-- Don't pin camera app to save memory -->
         <item>runtime_native_boot/pin_camera=false</item>
@@ -60,37 +140,6 @@
         <item>device_personalization_services/Captions__enable_clearcut_logging=true</item>
         <item>device_personalization_services/Captions__enable_language_detection=true</item>
         <item>device_personalization_services/Captions__enable_punctuations=true</item>
-
-        <!-- Pixel Launcher Search -->
-        <item>device_personalization_services/Echo__search_enable_all_fallback_results=true</item>
-        <item>device_personalization_services/Echo__search_enable_allowlist=true</item>
-        <item>device_personalization_services/Echo__search_enable_app_fetcher_v2=true</item>
-        <item>device_personalization_services/Echo__search_enable_app_search_tips=true</item>
-        <item>device_personalization_services/Echo__search_enable_app_token_indexing=false</item>
-        <item>device_personalization_services/Echo__search_enable_app_usage_stats_ranking=true</item>
-        <item>device_personalization_services/Echo__search_enable_application_header_type=true</item>
-        <item>device_personalization_services/Echo__search_enable_apps=true</item>
-        <item>device_personalization_services/Echo__search_enable_appsearch_tips_ranking_improvement=true</item>
-        <item>device_personalization_services/Echo__search_enable_assistant_quick_phrases_settings=true</item>
-        <item>device_personalization_services/Echo__search_enable_bc_smartspace_settings=true</item>
-        <item>device_personalization_services/Echo__search_enable_bc_translate_settings=true</item>
-        <item>device_personalization_services/Echo__search_enable_eventstore=true</item>
-        <item>device_personalization_services/Echo__search_enable_everything_else_above_web=true</item>
-        <item>device_personalization_services/Echo__search_enable_fetcher_optimization_using_result_types=true</item>
-        <item>device_personalization_services/Echo__search_enable_filter_pending_jobs=true</item>
-        <item>device_personalization_services/Echo__search_enable_mdp_play_results=true</item>
-        <item>device_personalization_services/Echo__search_enable_play=true</item>
-        <item>device_personalization_services/Echo__search_enable_play_alleyoop=true</item>
-        <item>device_personalization_services/Echo__search_enable_scraping=true</item>
-        <item>device_personalization_services/Echo__search_enable_search_in_app_icon=true</item>
-        <item>device_personalization_services/Echo__search_enable_settings_corpus=true</item>
-        <item>device_personalization_services/Echo__search_enable_shortcuts=true</item>
-        <item>device_personalization_services/Echo__search_enable_static_shortcuts=true</item>
-        <item>device_personalization_services/Echo__search_enable_superpacks_app_terms=true</item>
-        <item>device_personalization_services/Echo__search_enable_superpacks_play_results=true</item>
-        <item>device_personalization_services/Echo__search_enable_top_hit_row=true</item>
-        <item>device_personalization_services/Echo__search_enable_widget_corpus=true</item>
-        <item>device_personalization_services/Echo__search_play_enable_spell_correction=true</item>
 
         <!-- Smartspace -->
         <item>device_personalization_services/Cell__enable_cell=true</item>
@@ -232,36 +281,18 @@
         <item>device_personalization_services/SmartRecPixelSearch__enable_spelling_correction=true</item>
         <item>device_personalization_services/SmartRecPixelSearch__spelling_checker_frequency_score_overrides_map={"8":-7}</item>
 
-        <!-- Pixel Launcher -->
-        <item>launcher/enable_one_search=true</item>
-        <item>launcher/ENABLE_LOCAL_RECOMMENDED_WIDGETS_FILTER=true</item>
-        <item>launcher/ENABLE_SMARTSPACE_ENHANCED=true</item>
-        <item>launcher/ENABLE_WIDGETS_PICKER_AIAI_SEARCH=true</item>
-
-        <!-- Pixel Launcher (Additional) -->
-        <item>launcher/ENABLE_LOCAL_COLOR_POPUPS=true</item>
-        <item>launcher/KEYGUARD_ANIMATION=true</item>
-        <item>launcher/ENABLE_REGION_SAMPLING=true</item>
-        <item>launcher/ENABLE_MINIMAL_DEVICE=true</item>
-        <item>launcher/ENABLE_LAUNCHER_ACTIVITY_THEME_CROSSFADE=true</item>
-        <item>launcher/ENABLE_DISMISS_PREDICTION_UNDO=true</item>
-        <item>launcher/ENABLE_KEYBOARD_TRANSITION_SYNC=true</item>
-        <item>launcher/ENABLE_WIDGET_PICKER_DEPTH=true</item>
-        <item>launcher/SHOW_DELIGHTFUL_PAGINATION_FOLDER=true</item>
-        <item>launcher/POPUP_MATERIAL_U=true</item>
-
         <!-- System Ui -->
         <item>systemui/quick_access_wallet_enabled=true</item>
         <item>systemui/enable_screenshot_corner_flow=true</item>
         <item>systemui/enable_screenshot_notification_smart_actions=true</item>
         <item>systemui/enable_screenshot_scrolling=true</item>
 
+	<!-- Window Manager splash screen exemption -->
+	<item>window_manager/splash_screen_exception_list=com.facebook.lite,com.facebook.mlite,com.instagram.android,tv.twitch.android.app,tv.twitch.android.viewer,org.iggymedia.periodtracker,com.ohmgames.cheatandrun,com.skgames.trafficracer,com.skgames.trafficrider,com.skgames.wingsonfiregame,com.microblink.photomath,com.cam001.selfie,com.soundcloud.android,com.skype.raider,com.phonepe.app,jp.naver.line.android,com.facebook.stella,in.startv.hotstar,in.startv.hotstar.dplus,ru.yandex.yandexnavi,com.google.android.apps.nbu.paisa.user,net.one97.paytm,com.viber.voip,com.king.candycrushsaga,com.roblox.client,com.picsart.studio,com.jio.myjio,in.mohalla.sharechat,com.imo.android.imoim,com.discord,com.meesho.supply,com.kiloo.subwaysurf,com.booking,com.jio.media.jiobeats,com.nexstreaming.app.kinemasterfree,com.nhn.android.navercafe,br.com.gabba.Caixa,com.nu.production,com.funnypuri.client,com.gaana,com.graymatrix.did,com.canva.editor,com.mercadopago.wallet,com.overdrive.mobile.android.libby,com.duolingo,com.taxis99,br.com.bb.android,id.dana,com.wix.android,com.bigwinepot.nwdn.international,com.lazygeniouz.saveit,com.instagram.lite,com.picpay,com.tv.v18.viola,com.bradesco,org.iggymedia.periodtracker,com.didiglobal.passenger,com.iqiyi.i18n,com.naver.linewebtoon,com.sonyliv,ru.dublgis.dgismobile,com.itau,tr.gov.turkiye.edevlet.kapisi,com.mcdonalds.mobileapp,com.pandora.android,com.ixigo.train.ixitrain,com.realme.link,com.videoeditorpro.android,br.gov.caixa.fgts.trabalhador,com.bancomer.mbanking,br.gov.serpro.cnhe,de.zalando.mobile,com.agoda.mobile.consumer,photoeditor.layout.collagemaker,com.heytap.quickgame,photo.editor.photoeditor.photoeditorpro,video.reface.app,sortpuz.water.sort.puzzle.game,in.cricketexchange.app.cricketexchange,me.zepeto.main,com.axis.mobile,br.com.santander.way,com.novapontocom.casasbahia,pdf.tap.scanner,com.mic.bluezone,instagram.photo.video.downloader.repost.insta,com.bankofbaroda.mconnect,media.music.musicplayer,org.jw.jwlibrary.mobile,com.superbinogo.jungleboyadventure,br.com.intermedium,com.indiaBulls,com.traveloka.android,com.portonics.mygp,com.unicostudio.braintest,com.unicostudio.braintest2new,com.pedidosya,com.naver.vapp,com.microsoft.xboxone.smartglass,com.mind.quiz.brain.out,th.co.truemoney.wallet,com.itaucard.activity,com.ubercab.driver,in.gov.umang.negd.g2c,com.Dominos,omegle.tv,com.chase.sig.android,com.rockstargames.gtasa,com.snowcorp.vita,com.forshared.files,com.bpjstku,com.taxsee.taxsee,com.wallapop,puzzle.blockpuzzle.cube.relax,com.dd.doordash,com.nvt.cs,com.garanti.cepsubesi,com.inditex.zara,net.telewebion,com.fogg.photovideomaker,naukriApp.appModules.login,com.nttdocomo.android.dmenu2,com.emeint.android.myservices,com.fundevs.app.mediaconverter,com.mobikwik_new.bajajfinserv,com.scores365,com.themausoft.wpsapp,com.mcdo.mcdonalds,com.ge.capital.konysbiapp,com.glovo,com.picmax.wemoji,com.oyo.consumer,com.funcamerastudio.videomaker,com.comuto,my.com.tngdigital.ewallet,com.instagram.layout,com.ykb.android,br.com.mobicare.minhaoi,com.citibanamex.banamexmobile,com.nhn.android.webtoon,com.evernote,com.lyxoto.master.forminecraftpe,com.tripadvisor.tripadvisor,jp.co.mcdonalds.android,com.lguplus.mobile.cs,app.trell,com.infraware.office.link,com.iqoption,com.jazz.jazzworld,com.lomotif.android,glitchvideoeditor.videoeffects.glitchvideoeffect,videoplayer.videodownloader.hdvideoplayer,com.tmobile.pr.mytmobile,com.swifthawk.picku.free</item>
+
         <!-- Notifications -->
         <item>notification_assistant/generate_actions=true</item>
         <item>notification_assistant/generate_replies=true</item>
-
-        <!-- Globally enable the new photo picker -->
-        <item>storage_native_boot/take_over_get_content=true</item>
 
         <!-- Autofill compatibility apps -->
         <item>autofill/compat_mode_allowed_packages=com.android.chrome[url_bar]:com.brave.browser[url_bar]:com.brave.browser_beta[url_bar]:com.brave.browser_nightly[url_bar]:com.chrome.beta[url_bar]:com.chrome.dev[url_bar]:com.chrome.canary[url_bar]:com.microsoft.emmx[url_bar]:com.microsoft.emmx.beta[url_bar]:com.microsoft.emmx.canary[url_bar]:com.microsoft.emmx.dev[url_bar]:com.opera.browser[url_field]:com.opera.browser.beta[url_bar]:com.opera.mini.native[url_bar]:com.opera.mini.native.beta[url_bar]:com.sec.android.app.sbrowser[location_bar_edit_text]:com.sec.android.app.sbrowser.beta[location_bar_edit_text]:org.mozilla.fennec_aurora[url_bar]:org.mozilla.firefox[url_bar]:org.mozilla.firefox_beta[url_bar]:org.chromium.chrome[url_bar]</item>
