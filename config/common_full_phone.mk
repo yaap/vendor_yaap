@@ -1,6 +1,10 @@
 # Inherit common stuff
 $(call inherit-product, vendor/yaap/config/common.mk)
 
+# Sensitive Phone Numbers list
+PRODUCT_PACKAGES += \
+    sensitive_pn.xml
+
 # World APN list
 PRODUCT_PACKAGES += \
     apns-conf.xml
