@@ -55,9 +55,9 @@ KERNEL_ARCH := $(TARGET_KERNEL_ARCH)
 endif
 
 CLANG_PREBUILTS := $(BUILD_TOP)/prebuilts/clang/host/$(HOST_PREBUILT_TAG)/clang-r450784d
-KERNEL_VERSION := $(shell grep "^VERSION = " $(TARGET_KERNEL_SOURCE)/Makefile | awk '{ print $$3 }')
-KERNEL_PATCHLEVEL := $(shell grep "^PATCHLEVEL = " $(TARGET_KERNEL_SOURCE)/Makefile | awk '{ print $$3 }')
-TARGET_KERNEL_VERSION ?= $(shell echo $(KERNEL_VERSION)"."$(KERNEL_PATCHLEVEL))
+KERNEL_VERSION := $(shell grep '^VERSION = ' $(TARGET_KERNEL_SOURCE)/Makefile | awk '{ print $$3 }')
+KERNEL_PATCHLEVEL := $(shell grep '^PATCHLEVEL = ' $(TARGET_KERNEL_SOURCE)/Makefile | awk '{ print $$3 }')
+TARGET_KERNEL_VERSION ?= $(shell echo $(KERNEL_VERSION)'.'$(KERNEL_PATCHLEVEL))
 
 GCC_PREBUILTS := $(BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)
 
@@ -114,15 +114,15 @@ ifneq ($(USE_CCACHE),)
 endif
 
 ifneq ($(TARGET_KERNEL_CLANG_COMPILE),false)
-    KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(KERNEL_TOOLCHAIN_PATH)"
+    KERNEL_CROSS_COMPILE := CROSS_COMPILE='$(KERNEL_TOOLCHAIN_PATH)'
 else
-    KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(CCACHE_BIN) $(KERNEL_TOOLCHAIN_PATH)"
+    KERNEL_CROSS_COMPILE := CROSS_COMPILE='$(CCACHE_BIN) $(KERNEL_TOOLCHAIN_PATH)'
 endif
 
 # Needed for CONFIG_COMPAT_VDSO, safe to set for all arm64 builds
 ifeq ($(KERNEL_ARCH),arm64)
-   KERNEL_CROSS_COMPILE += CROSS_COMPILE_ARM32="$(KERNEL_TOOLCHAIN_arm)/$(KERNEL_TOOLCHAIN_PREFIX_arm)"
-   KERNEL_CROSS_COMPILE += CROSS_COMPILE_COMPAT="$(KERNEL_TOOLCHAIN_arm)/$(KERNEL_TOOLCHAIN_PREFIX_arm)"
+   KERNEL_CROSS_COMPILE += CROSS_COMPILE_ARM32='$(KERNEL_TOOLCHAIN_arm)/$(KERNEL_TOOLCHAIN_PREFIX_arm)'
+   KERNEL_CROSS_COMPILE += CROSS_COMPILE_COMPAT='$(KERNEL_TOOLCHAIN_arm)/$(KERNEL_TOOLCHAIN_PREFIX_arm)'
 endif
 
 # Clear this first to prevent accidental poisoning from env
@@ -133,20 +133,20 @@ KERNEL_MAKE_FLAGS += -j$(shell prebuilts/tools-lineage/$(HOST_PREBUILT_TAG)/bin/
 
 ifeq ($(TARGET_KERNEL_CLANG_COMPILE),false)
   ifeq ($(KERNEL_ARCH),arm)
-    # Avoid "Unknown symbol _GLOBAL_OFFSET_TABLE_" errors
-    KERNEL_MAKE_FLAGS += CFLAGS_MODULE="-fno-pic"
+    # Avoid 'Unknown symbol _GLOBAL_OFFSET_TABLE_' errors
+    KERNEL_MAKE_FLAGS += CFLAGS_MODULE='-fno-pic'
   endif
 
   ifeq ($(KERNEL_ARCH),arm64)
-    # Avoid "unsupported RELA relocation: 311" errors (R_AARCH64_ADR_GOT_PAGE)
-    KERNEL_MAKE_FLAGS += CFLAGS_MODULE="-fno-pic"
+    # Avoid 'unsupported RELA relocation: 311' errors (R_AARCH64_ADR_GOT_PAGE)
+    KERNEL_MAKE_FLAGS += CFLAGS_MODULE='-fno-pic'
   endif
 endif
 
 ifeq ($(HOST_OS),darwin)
-  KERNEL_MAKE_FLAGS += HOSTCFLAGS="-I$(BUILD_TOP)/external/elfutils/libelf -I/usr/local/opt/openssl/include" HOSTLDFLAGS="-L/usr/local/opt/openssl/lib -fuse-ld=lld"
+  KERNEL_MAKE_FLAGS += HOSTCFLAGS='-I$(BUILD_TOP)/external/elfutils/libelf -I/usr/local/opt/openssl/include' HOSTLDFLAGS='-L/usr/local/opt/openssl/lib -fuse-ld=lld'
 else
-  KERNEL_MAKE_FLAGS += CPATH="/usr/include:/usr/include/x86_64-linux-gnu" HOSTLDFLAGS="-L/usr/lib/x86_64-linux-gnu -L/usr/lib64 -fuse-ld=lld"
+  KERNEL_MAKE_FLAGS += CPATH='/usr/include:/usr/include/x86_64-linux-gnu' HOSTLDFLAGS='-L/usr/lib/x86_64-linux-gnu -L/usr/lib64 -fuse-ld=lld'
 endif
 
 TOOLS_PATH_OVERRIDE := \
