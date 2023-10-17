@@ -33,7 +33,8 @@ SOONG_CONFIG_lineageGlobalVars += \
     aapt_version_code \
     target_surfaceflinger_udfps_lib \
     target_init_vendor_lib \
-    camera_needs_client_info_defaults 
+    camera_needs_client_info_defaults \
+    target_camera_package_name
 
 SOONG_CONFIG_NAMESPACES += lineageQcomVars
 SOONG_CONFIG_lineageQcomVars += \
@@ -60,6 +61,7 @@ TARGET_CAMERA_NEEDS_CLIENT_INFO ?= false
 
 # Soong value variables
 SOONG_CONFIG_lineageGlobalVars_camera_skip_kind_check := $(CAMERA_SKIP_KIND_CHECK)
+SOONG_CONFIG_lineageGlobalVars_target_camera_package_name := $(TARGET_CAMERA_PACKAGE_NAME)
 SOONG_CONFIG_lineageGlobalVars_aapt_version_code := $(shell date -u +%Y%m%d)
 SOONG_CONFIG_lineageGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFACEFLINGER_UDFPS_LIB)
 SOONG_CONFIG_lineageQcomVars_no_camera_smooth_apis := $(TARGET_HAS_NO_CAMERA_SMOOTH_APIS)
