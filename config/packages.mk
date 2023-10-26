@@ -39,7 +39,8 @@ PRODUCT_PACKAGES += \
     TrichromeWebView \
     TrichromeChrome \
     YAAPThemePicker \
-    Seedvault
+    Seedvault \
+    OpenDelta
 
 # TextClassifier
 PRODUCT_PACKAGES += \
