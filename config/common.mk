@@ -135,6 +135,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.launcher.blur.appLaunch=0
 endif
 
+# Updatable APEXs are a necessity to boot in U.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 ifneq ($(wildcard vendor/google/modules/.),)
 # Flatten APEXs for performance
 OVERRIDE_TARGET_FLATTEN_APEX := true
