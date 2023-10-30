@@ -135,6 +135,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.launcher.blur.appLaunch=0
 endif
 
+# EGL - Blobcache configuration
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.egl.blobcache.multifile=true \
+    ro.egl.blobcache.multifile_limit=33554432
+
 # Updatable APEXs are a necessity to boot in U.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
