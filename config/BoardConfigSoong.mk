@@ -38,6 +38,8 @@ SOONG_CONFIG_lineageQcomVars += \
     no_camera_smooth_apis \
     uses_qti_camera_device \
     should_wait_for_qsee \
+    qti_vibrator_effect_lib \
+    qti_vibrator_use_effect_stream \
     supports_extended_compress_format
 
 # Only create display_headers_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
@@ -55,6 +57,7 @@ endef
 TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
 TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_CAMERA_NEEDS_CLIENT_INFO ?= false
+TARGET_QTI_VIBRATOR_EFFECT_LIB ?= libqtivibratoreffect
 
 # Soong value variables
 SOONG_CONFIG_lineageGlobalVars_camera_skip_kind_check := $(CAMERA_SKIP_KIND_CHECK)
@@ -67,11 +70,13 @@ SOONG_CONFIG_lineageGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LI
 SOONG_CONFIG_lineageGlobalVars_camera_needs_client_info_defaults := $(TARGET_CAMERA_NEEDS_CLIENT_INFO)
 SOONG_CONFIG_lineageQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
 SOONG_CONFIG_lineageQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
+SOONG_CONFIG_lineageQcomVars_qti_vibrator_use_effect_stream := $(TARGET_QTI_VIBRATOR_USE_EFFECT_STREAM)
 
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
 SOONG_CONFIG_lineageQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
 else
 SOONG_CONFIG_lineageQcomVars_qcom_display_headers_namespace := $(QCOM_SOONG_NAMESPACE)/display
 endif
+SOONG_CONFIG_lineageQcomVars_qti_vibrator_effect_lib := $(TARGET_QTI_VIBRATOR_EFFECT_LIB)
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
