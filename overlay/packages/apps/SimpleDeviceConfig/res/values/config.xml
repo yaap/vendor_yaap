@@ -46,7 +46,6 @@
 
 	<!-- Misc -->
 	<item>alarm_manager/lazy_batching=true</item>
-	<item>lmkd_native/thrashing_limit_critical=200</item>
 	<item>runtime_native/use_app_image_startup_cache=true</item>
 	<item>surface_flinger_native_boot/SkiaTracingFeature__use_skia_tracing=false</item>
 	<item>storage_native_boot/dirty_reclaim_rate=0.5</item>
