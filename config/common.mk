@@ -83,6 +83,8 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay
 ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay-vanilla
 endif
+PRODUCT_COPY_FILES += \
+    vendor/yaap/overlay/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
