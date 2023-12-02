@@ -90,6 +90,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/packages
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/frameworks
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/packages
 PRODUCT_PACKAGES += \
+    CertifiedPropsOverlay \
     FrameworksOverlay \
     SettingsOverlay \
     SettingsProviderOverlay \
