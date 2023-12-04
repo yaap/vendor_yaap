@@ -19,8 +19,8 @@ yaap: otapackage
 	@echo -e "		Yet Another AOSP Project			   "
 	@echo -e ""
 	@echo -e "zip: "$(YAAP_TARGET_PACKAGE)
-	@echo -e "sha256: "${cya}" `cat $(YAAP_TARGET_PACKAGE).sha256sum | cut -d ' ' -f 1`"
-	@echo -e "size:`ls -lah $(YAAP_TARGET_PACKAGE) | cut -d ' ' -f 5`"
+	@echo -e "sha256: `cat $(YAAP_TARGET_PACKAGE).sha256sum | cut -d ' ' -f 1`"
+	@echo -e "size: `ls -lah $(YAAP_TARGET_PACKAGE) | cut -d ' ' -f 5`"
 	@echo -e ""
 
 bacon: yaap

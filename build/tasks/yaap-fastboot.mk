@@ -16,5 +16,5 @@ yaap-fastboot: updatepackage
 	@echo -e "		Yet Another AOSP Project			   "
 	@echo -e ""
 	@echo -e "zip: "$(YAAP_FASTBOOT_PACKAGE)
-	@echo -e "size:`ls -lah $(YAAP_FASTBOOT_PACKAGE) | cut -d ' ' -f 5`"
+	@echo -e "size: `ls -lah $(YAAP_FASTBOOT_PACKAGE) | cut -d ' ' -f 5`"
 	@echo -e ""
