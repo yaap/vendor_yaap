@@ -18,7 +18,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Strings for PixelPropUtils -->
-    <string name="build_device">redfin</string>
-    <string name="build_fp">google/redfin/redfin:14/UP1A.231005.007/10754064:user/release-keys</string>
-    <string name="build_model">Pixel 5</string>
+    <string name="build_device">barbet</string>
+    <string name="build_fp">google/barbet/barbet:14/UQ1A.231205.014/11049176:user/release-keys</string>
+    <string name="build_model">Pixel 5a</string>
 </resources>
