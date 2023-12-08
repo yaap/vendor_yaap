@@ -38,7 +38,6 @@ PRODUCT_PACKAGES += \
     TrichromeLibrary \
     TrichromeWebView \
     TrichromeChrome \
-    YAAPThemePicker \
     Seedvault \
     OpenDelta
 
