@@ -104,18 +104,6 @@
     <!-- Whether or not to enable the lock screen entry point for the QR code scanner. -->
     <bool name="config_enableQrCodeScannerOnLockScreen">true</bool>
 
-    <!-- Limit these apps to 60 Hz to save power -->
-    <string-array name="config_highRefreshRateBlacklist">
-        <item>com.server.auditor.ssh.client</item>
-        <item>com.sonelli.juicessh</item>
-        <item>com.termux</item>
-        <item>jackpal.androidterm</item>
-        <item>org.connectbot</item>
-        <item>yarolegovich.materialterminal</item>
-        <item>com.amazon.kindle</item>
-        <item>com.google.android.apps.books</item>
-    </string-array>
-
     <!-- Name of the font family to use in the default lockscreen clock -->
     <string name="config_clockFontFamily" translatable="false">@font/google_sans_clock</string>
 
