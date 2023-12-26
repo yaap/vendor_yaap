@@ -99,8 +99,8 @@ include vendor/yaap/config/packages.mk
 include vendor/yaap/config/version.mk
 
 # ART
-# Optimize everything for preopt
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
+# Speed optimize everything for preopt
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed
 
 # SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -116,12 +116,6 @@ ifeq ($(TARGET_SUPPORTS_64_BIT_APPS), true)
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat64.enabled=true
 endif
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    pm.dexopt.boot=verify \
-    pm.dexopt.first-boot=verify \
-    pm.dexopt.install=speed-profile \
-    pm.dexopt.bg-dexopt=everything
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_PROPERTY_OVERRIDES += \
