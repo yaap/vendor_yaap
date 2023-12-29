@@ -18,6 +18,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Strings for PixelPropUtils -->
+    <string name="cert_device">YUREKA</string>
+    <string name="cert_fp">YU/YUREKA/YUREKA:5.1.1/LMY49J/YOG4PAS8A4:user/release-keys</string>
+    <string name="cert_model">YU5510</string>
+    <string name="cert_spl">2015-11-01</string>
+    <integer name="cert_sdk">17</integer>
     <string name="build_device">barbet</string>
     <string name="build_fp">google/barbet/barbet:14/UQ1A.231205.014/11049176:user/release-keys</string>
     <string name="build_model">Pixel 5a</string>
