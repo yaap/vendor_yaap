@@ -78,10 +78,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SimpleDeviceConfig
 
-# Repainter integration
-PRODUCT_PACKAGES += \
-    RepainterServicePriv
-
 # Telephony - CLO
 PRODUCT_PACKAGES += \
     extphonelib \
