@@ -24,6 +24,6 @@
     <string name="cert_spl">2015-11-01</string>
     <integer name="cert_sdk">17</integer>
     <string name="build_device">barbet</string>
-    <string name="build_fp">google/barbet/barbet:14/UQ1A.231205.014/11049176:user/release-keys</string>
+    <string name="build_fp">google/barbet/barbet:14/UQ1A.240105.002/11129216:user/release-keys</string>
     <string name="build_model">Pixel 5a</string>
 </resources>
