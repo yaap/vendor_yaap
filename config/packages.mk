@@ -38,6 +38,7 @@ PRODUCT_PACKAGES += \
     TrichromeLibrary \
     TrichromeWebView \
     TrichromeChrome \
+    Recorder \
     Seedvault \
     OpenDelta
 
