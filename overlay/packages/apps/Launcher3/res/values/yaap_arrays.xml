@@ -2,6 +2,7 @@
 <resources>
     <string-array name="qsb_search_fallback">
         <item>com.duckduckgo.mobile.android</item>
+        <item>org.cromite.cromite</item>
         <item>com.brave.browser_beta</item>
         <item>com.brave.browser</item>
         <item>org.mozilla.focus</item>
