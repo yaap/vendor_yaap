@@ -176,3 +176,9 @@ $(call inherit-product, vendor/themes/common.mk)
 
 # Sepolicy
 $(call inherit-product, vendor/yaap/config/sepolicy.mk)
+
+# Virtualization
+$(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.boot.hypervisor.vm.supported=1 \
+    ro.boot.hypervisor.protected_vm.supported=1
