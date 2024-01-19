@@ -18,11 +18,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Strings for PixelPropUtils -->
-    <string name="cert_device">YUREKA</string>
-    <string name="cert_fp">YU/YUREKA/YUREKA:5.1.1/LMY49J/YOG4PAS8A4:user/release-keys</string>
-    <string name="cert_model">YU5510</string>
-    <string name="cert_spl">2015-11-01</string>
-    <integer name="cert_sdk">17</integer>
+    <string name="cert_device">HS6735MT</string>
+    <string name="cert_fp">Hisense/F30/HS6735MT:6.0/MRA58K/L1228.6.01.01:user/release-keys</string>
+    <string name="cert_model">Hisense F30</string>
+    <string name="cert_spl">2016-02-01</string>
+    <integer name="cert_sdk">18</integer>
     <string name="build_device">barbet</string>
     <string name="build_fp">google/barbet/barbet:14/UQ1A.240105.002/11129216:user/release-keys</string>
     <string name="build_model">Pixel 5a</string>
