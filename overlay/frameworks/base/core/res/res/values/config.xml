@@ -16,19 +16,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- The duration (in milliseconds) of a short animation. -->
-    <integer name="config_shortAnimTime">100</integer>
-
-    <!-- The duration (in milliseconds) of a medium-length animation. -->
-    <integer name="config_mediumAnimTime">200</integer>
-
-    <!-- The duration (in milliseconds) of a long animation. -->
-    <integer name="config_longAnimTime">250</integer>
-
-    <!-- The duration (in milliseconds) of the activity open/close and fragment open/close animations. -->
-    <integer name="config_activityShortDur">75</integer>
-    <integer name="config_activityDefaultDur">110</integer>
-
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
