@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
 # YAAP packages
 PRODUCT_PACKAGES += \
     Aperture \
+    ExactCalculator \
     MatLog \
     TrichromeLibrary \
     TrichromeWebView \
@@ -65,7 +66,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGES += \
     Etar \
-    ExactCalculator \
     LatinIME \
     messaging \
     SetupWizard
