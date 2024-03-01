@@ -18,10 +18,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Strings for PixelPropUtils -->
-    <string name="cert_device">HS6735MT</string>
-    <string name="cert_fp">Hisense/F30/HS6735MT:6.0/MRA58K/L1228.6.01.01:user/release-keys</string>
-    <string name="cert_model">Hisense F30</string>
-    <string name="cert_spl">2016-02-01</string>
+    <string name="cert_device">griffin</string>
+    <string name="cert_fp">motorola/griffin_retcn/griffin:6.0.1/MCC24.246-37/42:user/release-keys</string>
+    <string name="cert_model">XT1650-05</string>
+    <string name="cert_spl">2016-07-01</string>
     <integer name="cert_sdk">18</integer>
     <string name="build_device">barbet</string>
     <string name="build_fp">google/barbet/barbet:14/UQ1A.240205.002/11224170:user/release-keys</string>
