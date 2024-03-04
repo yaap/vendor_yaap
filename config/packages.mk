@@ -42,6 +42,8 @@ PRODUCT_PACKAGES += \
     Recorder \
     Seedvault \
     OpenDelta \
+    Ripple \
+    Panic \
     BatteryStatsViewer
 
 # TextClassifier
