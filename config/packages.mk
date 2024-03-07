@@ -35,15 +35,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aperture \
     ExactCalculator \
-    MatLog \
     TrichromeLibrary \
     TrichromeWebView \
     TrichromeChrome \
     Recorder \
-    Seedvault \
     OpenDelta \
     Ripple \
-    Panic \
     BatteryStatsViewer
 
 # TextClassifier
