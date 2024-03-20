@@ -148,9 +148,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.egl.blobcache.multifile=true \
     ro.egl.blobcache.multifile_limit=33554432
 
-# Updatable APEXs are a necessity to boot in U.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
 ifeq ($(TARGET_BUILD_GAPPS),true)
     $(call inherit-product-if-exists, vendor/google/gms/config.mk)
 else
