@@ -39,8 +39,10 @@ PRODUCT_PACKAGES += \
     TrichromeWebView \
     TrichromeChrome \
     Recorder \
+    Seedvault \
     OpenDelta \
     Ripple \
+    Panic \
     BatteryStatsViewer
 
 # TextClassifier
