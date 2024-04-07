@@ -35,6 +35,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aperture \
     ExactCalculator \
+    MatLog \
     TrichromeLibrary \
     TrichromeWebView \
     TrichromeChrome \
