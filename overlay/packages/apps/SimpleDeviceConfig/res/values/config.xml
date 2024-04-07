@@ -128,6 +128,9 @@
         <!-- Enable location accuracy toggle -->
         <item>privacy/location_accuracy_enabled=true</item>
 
+        <!-- Enable safety center -->
+        <item>privacy/safety_center_is_enabled=true</item>
+
         <!-- Enable smart actions in the clipboard overlay -->
         <item>systemui/clipboard_overlay_show_actions=true</item>
 
