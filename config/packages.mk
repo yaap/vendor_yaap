@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += \
     TrichromeChrome \
     Recorder \
     Seedvault \
+    OmniJaws \
     OpenDelta \
     Ripple \
     Panic \
