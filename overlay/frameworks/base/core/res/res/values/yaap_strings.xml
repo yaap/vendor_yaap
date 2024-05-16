@@ -18,10 +18,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Strings for PixelPropUtils -->
-    <string name="cert_device">griffin</string>
-    <string name="cert_fp">motorola/griffin_retcn/griffin:6.0.1/MCC24.246-37/42:user/release-keys</string>
-    <string name="cert_model">XT1650-05</string>
-    <string name="cert_spl">2016-07-01</string>
+    <string name="cert_device">clark</string>
+    <string name="cert_fp">motorola/clark_retus/clark:6.0/MPHS24.49-18-8/4:user/release-keys</string>
+    <string name="cert_model">XT1575</string>
+    <string name="cert_spl">2016-09-01</string>
     <integer name="cert_sdk">18</integer>
     <string name="build_device">barbet</string>
     <string name="build_fp">google/barbet/barbet:14/AP1A.240505.004/11583682:user/release-keys</string>
