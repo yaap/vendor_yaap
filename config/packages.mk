@@ -35,6 +35,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aperture \
     ExactCalculator \
+    Glimpse \
     MatLog \
     TrichromeLibrary \
     TrichromeWebView \
@@ -69,7 +70,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGES += \
     Etar \
-    Glimpse \
     LatinIME \
     messaging \
     SetupWizard
