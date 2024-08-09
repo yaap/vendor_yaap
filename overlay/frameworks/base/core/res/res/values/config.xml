@@ -116,4 +116,7 @@
 
     <!-- Maximum velocity to initiate a fling, as measured in dips per second. -->
     <dimen name="config_viewMaxFlingVelocity">12000dp</dimen>
+
+    <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
+    <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.8</item>
 </resources>
