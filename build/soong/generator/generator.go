@@ -119,7 +119,7 @@ func (g *Module) DepsMutator(ctx android.BottomUpMutatorContext) {
 	if g, ok := ctx.Module().(*Module); ok {
 		if len(g.properties.Tools) > 0 {
 			ctx.AddFarVariationDependencies(ctx.Config().BuildOSTarget.Variations(),
-			hostToolDepTag, g.properties.Tools...)
+				hostToolDepTag, g.properties.Tools...)
 		}
 	}
 }
@@ -152,7 +152,7 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 				var path android.OptionalPath
 
 				if t, ok := module.(HostToolProvider); ok {
-					if !t.(android.Module).Enabled() {
+					if !t.(android.Module).Enabled(ctx) {
 						if ctx.Config().AllowMissingDependencies() {
 							ctx.AddMissingDependencies([]string{tool})
 						} else {
