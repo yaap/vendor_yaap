@@ -88,7 +88,11 @@ SYSTEMUI_OPTIMIZE_JAVA ?= true
 PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay
 ifneq ($(TARGET_BUILD_GAPPS),true)
-PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay-vanilla
+PRODUCT_PACKAGES += \
+    FrameworksOverlayVanilla \
+    OpenDeltaOverlayVanilla \
+    SettingsProviderOverlayVanilla \
+    ThemePickerOverlayVanilla
 # Include LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay-vanilla/dictionaries
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay-vanilla/dictionaries
