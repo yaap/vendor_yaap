@@ -85,8 +85,19 @@ SYSTEM_OPTIMIZE_JAVA ?= true
 SYSTEMUI_OPTIMIZE_JAVA ?= true
 
 # Product overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/frameworks
+PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/packages
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/frameworks
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/packages
+PRODUCT_PACKAGES += \
+    DialerOverlay \
+    DocumentsUIOverlay \
+    FrameworksOverlay \
+    LatinIMEOverlay \
+    SettingsOverlay \
+    SettingsProviderOverlay \
+    SystemUIOverlay \
+    YAAPLauncherOverlay
 ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGES += \
     FrameworksOverlayVanilla \
