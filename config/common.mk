@@ -91,7 +91,6 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/frameworks
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/packages
 PRODUCT_PACKAGES += \
     DialerOverlay \
-    DocumentsUIOverlay \
     FrameworksOverlay \
     LatinIMEOverlay \
     SettingsOverlay \
