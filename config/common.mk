@@ -102,6 +102,7 @@ ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGES += \
     FrameworksOverlayVanilla \
     OpenDeltaOverlayVanilla \
+    SettingsOverlayVanilla \
     SettingsProviderOverlayVanilla \
     ThemePickerOverlayVanilla
 # Include LatinIME dictionaries
