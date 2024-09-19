@@ -4,7 +4,7 @@ GREEN="\033[1;32m"
 YELLOW="\033[1;33m"
 NC="\033[0m"
 
-OFFICIAL_TAGS=("Urshanabi" "Vanilla")
+NON_OFFICIAL_TAG="HOMEMADE"
 
 findPayloadOffset() {
     build=$1
@@ -28,8 +28,10 @@ findPayloadOffset() {
 }
 
 if ! [ "$1" ]; then
-    echo "${RED}No file provided${NC}"
-    return 1
+    echo -e "${RED}No file provided${NC}"
+    if ! return 0 &> /dev/null; then
+        exit 0
+    fi
 fi
 
 file_path=$1
@@ -37,30 +39,30 @@ file_dir=$(dirname "$file_path")
 file_name=$(basename "$file_path")
 
 if ! [ -f "$file_path" ]; then
-    echo "${RED}File does not exist${NC}"
-    return 1
+    echo -e "${RED}File does not exist${NC}"
+    if ! return 0 &> /dev/null; then
+        exit 0
+    fi
 fi
 
 # only generate for official builds. unless forced with 'export FORCE_JSON=1'
-isOfficial=0
+isOfficial=1
 if [[ $FORCE_JSON == 1 ]]; then
-    isOfficial=1
     echo -e "${GREEN}Forced generation of json${NC}"
 else
-    for tag in "${OFFICIAL_TAGS[@]}"; do
-        if [[ $file_name == *"${tag}"* ]]; then
-            isOfficial=1
-            break
-        fi
-    done
+    if [[ $file_name == *"${NON_OFFICIAL_TAG}"* ]]; then
+        isOfficial=0
+    fi
 fi
 
 if [[ $isOfficial != 1 ]]; then
     echo -e "${YELLOW}Skipped generating json for a non-official build${NC}"
-    return 1
+    if ! return 0 &> /dev/null; then
+        exit 0
+    fi
 fi
 
-echo "${GREEN}Generating .json${NC}"
+echo -e "${GREEN}Generating .json${NC}"
 
 isPayload=0
 [ -f payload_properties.txt ] && rm payload_properties.txt
