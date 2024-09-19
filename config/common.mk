@@ -90,23 +90,25 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/packages
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/frameworks
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/packages
 PRODUCT_PACKAGES += \
-    DialerOverlay \
     FrameworksOverlay \
-    LatinIMEOverlay \
     SettingsOverlay \
     SettingsProviderOverlay \
     SystemUIOverlay \
     YAAPLauncherOverlay
 ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGES += \
+    DialerOverlayVanilla \
     FrameworksOverlayVanilla \
+    LatinIMEOverlayVanilla \
     OpenDeltaOverlayVanilla \
     SettingsOverlayVanilla \
     SettingsProviderOverlayVanilla \
     ThemePickerOverlayVanilla
 # Include LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay-vanilla/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay-vanilla/packages
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay-vanilla/dictionaries
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay-vanilla/packages
 endif
 PRODUCT_COPY_FILES += \
     vendor/yaap/overlay/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml

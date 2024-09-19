@@ -1,4 +1,4 @@
 runtime_resource_overlay {
-    name: "LatinIMEOverlay",
+    name: "DialerOverlayVanilla",
     product_specific: true,
 }
