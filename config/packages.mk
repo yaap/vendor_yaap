@@ -45,8 +45,7 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     OpenDelta \
     Ripple \
-    Panic \
-    BatteryStatsViewer
+    Panic
 
 # TextClassifier
 PRODUCT_PACKAGES += \
