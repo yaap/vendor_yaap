@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
 # YAAP packages
 PRODUCT_PACKAGES += \
     Aperture \
+    AvatarPicker \
     ExactCalculator \
     Glimpse \
     MatLog \
