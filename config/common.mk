@@ -94,8 +94,7 @@ PRODUCT_PACKAGES += \
     FrameworksOverlay \
     SettingsOverlay \
     SettingsProviderOverlay \
-    SystemUIOverlay \
-    YAAPLauncherOverlay
+    SystemUIOverlay
 ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGES += \
     DialerOverlayVanilla \
