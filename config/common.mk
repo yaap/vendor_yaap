@@ -131,8 +131,6 @@ include vendor/yaap/config/packages.mk
 include vendor/yaap/config/version.mk
 
 # ART
-# Speed optimize everything for preopt
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed
 
 # SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -147,11 +145,6 @@ ifeq ($(TARGET_SUPPORTS_64_BIT_APPS), true)
 # Use 64-bit dex2oat for better dexopt time.
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat64.enabled=true
-endif
-
-ifneq ($(AB_OTA_PARTITIONS),)
-PRODUCT_PROPERTY_OVERRIDES += \
-    pm.dexopt.ab-ota=verify
 endif
 
 # Disable async MTE on system_server
