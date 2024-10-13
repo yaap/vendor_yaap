@@ -24,5 +24,5 @@
     <string name="cert_model">Pixel 6</string>
     <string name="cert_manufacturer">Google</string>
     <string name="cert_spl">2024-09-05</string>
-    <integer name="cert_sdk">31</integer>
+    <string name="cert_sdk">31</string>
 </resources>
