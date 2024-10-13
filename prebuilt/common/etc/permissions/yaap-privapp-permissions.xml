@@ -42,6 +42,8 @@
         <permission name="android.permission.MANAGE_DOCUMENTS" />
         <permission name="android.permission.FOREGROUND_SERVICE" />
         <permission name="android.permission.POST_NOTIFICATIONS"/>
+        <permission name="android.permission.INSTALL_PACKAGES"/>
+        <permission name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     </privapp-permissions>
 
 </permissions>
