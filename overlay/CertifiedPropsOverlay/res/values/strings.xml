@@ -18,11 +18,24 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Strings for PixelPropUtils -->
-    <string name="cert_device">akita</string>
-    <string name="cert_fp">google/akita_beta/akita:15/AP41.240925.009/12534705:user/release-keys</string>
-    <string name="cert_model">Pixel 8a</string>
-    <string name="cert_manufacturer">Google</string>
-    <string name="cert_spl">2024-10-05</string>
-    <string name="cert_sdk">21</string>
+    <string-array name="config_certifiedBuildProperties" translatable="false">
+      <!--
+        Each entry must be of the format
+            FIELD:value
+        with the field belonging to android.os.Build or android.os.Build.VERSION class.
+        Example:
+        <item>BRAND:foo</item>
+        <item>DEVICE:bar</item>
+        <item>FINGERPRINT:foo/bar/bar:1.0/lorem/ipsum:dolor/sit-amet</item>
+        <item>VERSION.RELEASE:1.0</item>
+      -->
+      <item>BRAND:google</item>
+      <item>MANUFACTURER:Google</item>
+      <item>MODEL:Pixel 8a</item>
+      <item>PRODUCT:akita_beta</item>
+      <item>DEVICE:akita</item>
+      <item>FINGERPRINT:google/akita_beta/akita:15/AP41.240925.009/12534705:user/release-keys</item>
+      <item>SECURITY_PATCH:2024-10-05</item>
+      <item>DEVICE_INITIAL_SDK_INT:21</item>
+     </string-array>
 </resources>
