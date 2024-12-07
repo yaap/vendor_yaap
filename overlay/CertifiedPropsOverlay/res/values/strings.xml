@@ -31,11 +31,11 @@
       -->
       <item>BRAND:google</item>
       <item>MANUFACTURER:Google</item>
-      <item>MODEL:Pixel 8a</item>
-      <item>PRODUCT:akita_beta</item>
-      <item>DEVICE:akita</item>
-      <item>FINGERPRINT:google/akita_beta/akita:15/AP41.240925.009/12534705:user/release-keys</item>
-      <item>SECURITY_PATCH:2024-10-05</item>
+      <item>MODEL:Pixel 6</item>
+      <item>PRODUCT:oriole_beta</item>
+      <item>DEVICE:oriole</item>
+      <item>FINGERPRINT:google/oriole_beta/oriole:15/BP11.241025.006/12620009:user/release-keys</item>
+      <item>SECURITY_PATCH:2024-11-05</item>
       <item>DEVICE_INITIAL_SDK_INT:21</item>
      </string-array>
 </resources>
