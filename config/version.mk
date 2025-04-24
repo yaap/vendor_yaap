@@ -42,3 +42,10 @@ ifneq (,$(wildcard vendor/yaap/signing/keys/otakey.x509.pem))
 PRODUCT_OTA_PUBLIC_KEYS := vendor/yaap/signing/keys/otakey.x509.pem
 endif
 endif
+
+PERF_DEFAULT_GOV ?= schedutil
+PERF_ANIM_OVERRIDE ?= false
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.default_scaling_gov=$(PERF_DEFAULT_GOV) \
+    persist.sys.activity_anim_perf_override=$(PERF_ANIM_OVERRIDE)
