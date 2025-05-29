@@ -56,7 +56,7 @@ ifeq ($(TARGET_BUILD_VARIANT), user)
 endif
 
 # YAAP private configuration - optional.
-#$(call inherit-product-if-exists, vendor/yaap-priv/product.mk)
+$(call inherit-product-if-exists, vendor/yaap-priv/product.mk)
 
 # Dedupe VNDK libraries with identical core variants
 TARGET_VNDK_USE_CORE_VARIANT := true
