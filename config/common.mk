@@ -102,17 +102,14 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/frameworks
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/packages
 PRODUCT_PACKAGES += \
     DeviceConfigOverlay \
+    CertifiedPropsOverlay \
     FrameworksOverlay \
     PermissionControllerOverlay \
     SettingsOverlay \
     SettingsProviderOverlay \
     SystemUIOverlay
-ifeq ($(TARGET_BUILD_GAPPS),true)
+ifneq ($(TARGET_BUILD_GAPPS),true)
 PRODUCT_PACKAGES += \
-    EmptyPropsOverlay
-else
-PRODUCT_PACKAGES += \
-    CertifiedPropsOverlay \
     DialerOverlayVanilla \
     FrameworksOverlayVanilla \
     LatinIMEOverlayVanilla \
