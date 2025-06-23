@@ -1,0 +1,61 @@
+flag_value {
+  package: "com.android.systemui"
+  name: "notification_throttle_hun"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.systemui"
+  name: "fast_unlock_transition"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.systemui"
+  name: "haptic_brightness_slider"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.systemui"
+  name: "new_volume_panel"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.systemui"
+  name: "qs_ui_refactor_compose_fragment"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.systemui"
+  name: "qs_ui_refactor"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.systemui"
+  name: "notification_shade_blur"
+  state: ENABLED
+  permission: READ_ONLY
+}
+flag_value {
+  package: "com.android.systemui"
+  name: "notification_row_transparency"
+  state: ENABLED
+  permission: READ_ONLY
+}
+
+flag_value {
+  package: "com.android.systemui"
+  name: "notification_background_tint_optimization"
+  state: ENABLED
+  permission: READ_ONLY
+}
