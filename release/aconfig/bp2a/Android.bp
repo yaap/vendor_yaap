@@ -16,9 +16,7 @@
 aconfig_value_set {
     name: "aconfig_value_set-yaap-bp2a",
     values: [
-        "aconfig-values-bp2a-android.hardware.biometrics-all",
         "aconfig-values-bp2a-com.android.server.display.feature.flags-all",
-        "aconfig-values-bp2a-com.android.server.notification-all",
         "aconfig-values-bp2a-com.android.systemui-all",
         "aconfig-values-bp2a-android.security-all",
     ],
