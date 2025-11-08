@@ -47,7 +47,8 @@ PRODUCT_PACKAGES += \
     OpenDelta \
     Ripple \
     Panic \
-    LMOFreeform
+    LMOFreeform \
+    LMOSystemUIClock
 
 # TextClassifier
 PRODUCT_PACKAGES += \

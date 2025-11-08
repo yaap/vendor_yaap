@@ -49,7 +49,8 @@
         <item>com.android.systemui.clocks.metro</item>
         <item>com.android.systemui.clocks.numoverlap</item>
         <item>com.android.systemui.clocks.handwritten</item>
-        <item>com.android.systemui.clocks.weather</item>
+	<item>com.android.systemui.clocks.weather</item>
+        <item>com.libremobileos.clock</item>
     </string-array>
 
     <!-- Whether or not lockscreen shortcuts can be customized -->
