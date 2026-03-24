@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "SettingsOverlayWiFiOnly",
+    product_specific: true,
+}

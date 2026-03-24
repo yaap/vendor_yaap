@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "FrameworksOverlayTablet",
+    product_specific: true,
+}

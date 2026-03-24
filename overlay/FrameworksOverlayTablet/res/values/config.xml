@@ -17,15 +17,10 @@
 */
 -->
 
-<!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds. -->
-<resources>
-    <!-- Whether the communal service should be enabled -->
-    <bool name="config_communalServiceEnabled">true</bool>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Whether the current device's internal display can host desktop sessions.  -->
+    <bool name="config_canInternalDisplayHostDesktops">true</bool>
 
-    <!-- Whether or not to show the UMO on the glanceable hub when media is playing. -->
-    <bool name="config_showUmoOnHub">true</bool>
-
-    <!-- Configuration to swipe to open glanceable hub -->
-    <bool name="config_swipeToOpenGlanceableHub">true</bool>
+    <!-- Whether desktop mode is supported on the current device  -->
+    <bool name="config_isDesktopModeSupported">true</bool>
 </resources>
