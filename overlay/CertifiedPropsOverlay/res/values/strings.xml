@@ -19,10 +19,11 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Strings for PixelPropUtils -->
-    <string name="cert_device">blazer</string>
-    <string name="cert_fp">google/blazer_beta/blazer:CANARY/ZP11.260417.009/15372612:user/release-keys</string>
-    <string name="cert_model">Pixel 10 Pro</string>
-    <string name="cert_manufacturer">Google</string>
-    <string name="cert_spl">2026-05-05</string>
-    <string name="cert_sdk">32</string>
+    <string name="cert_device">cheetah</string>
+<string name="cert_fp">google/cheetah_beta/cheetah:CANARY/ZP11.260515.009/15513807:user/release-keys</string>
+<string name="cert_model">Pixel 7 Pro</string>
+<string name="cert_manufacturer">Google</string>
+<string name="cert_spl">2026-05-05</string> 
+<string name="cert_sdk">32</string>
+    
 </resources>
