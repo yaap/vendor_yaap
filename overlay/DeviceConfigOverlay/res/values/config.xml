@@ -35,6 +35,9 @@
         <!-- Globally enable the new photo picker -->
         <item>storage_native_boot/take_over_get_content=true</item>
 
+	<!-- Enable app image startup cache-->
+        <item>runtime_native/use_app_image_startup_cache=true</item>
+
         <!-- Machine learning back gesture (requires TensorFlow model) -->
         <item>systemui/use_back_gesture_ml_model=true</item>
         <item>systemui/back_gesture_ml_model_name=backgesture</item>
