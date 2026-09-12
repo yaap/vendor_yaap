@@ -1521,7 +1521,7 @@
   <apn mcc="425" mnc="05" carrier="Jawwal Internet" apn="internet" type="default,supl"/>
   <apn mcc="425" mnc="05" carrier="Jawwal MMS" apn="mms" mmsc="http://mms.jawwal.ps/servlets/mms" mmsport="8080" mmsproxy="213.244.118.129" type="mms"/>
   <apn mcc="425" mnc="05" carrier="Jawwal WAP" apn="wap" port="8080" proxy="213.244.118.129" type="default,supl"/>
-  <apn mcc="425" mnc="07" carrier="Hot Mobile" apn="net.hotm" type="default,supl"/>
+  <apn mcc="425" mnc="07" carrier="Hot Mobile" apn="net.hotm" type="default,supl" protocol="IPV4V6" roaming_protocol="IPV4V6"/>
   <apn mcc="425" mnc="07" carrier="Hot Mobile MMS" apn="mms.hotm" mmsc="http://mms.hotmobile.co.il" mmsport="80" type="mms"/>
   <apn mcc="425" mnc="08" carrier="Golan Telecom" apn="internet.golantelecom.net.il" authtype="0" type="default,supl"/>
   <apn mcc="425" mnc="08" carrier="Golan Telecom MMS" apn="mms.golantelecom.net.il" authtype="0" mmsc="http://mmsc.golantelecom.co.il" mmsport="80" mmsproxy="10.224.228.81" type="mms"/>
@@ -3167,8 +3167,6 @@
   <apn mcc="425" mnc="05" carrier="Jawwal Internet" apn="internet" type="default,supl"/>
   <apn mcc="425" mnc="05" carrier="Jawwal MMS" apn="mms" mmsc="http://mms.jawwal.ps/servlets/mms" mmsport="8080" mmsproxy="213.244.118.129" type="mms"/>
   <apn mcc="425" mnc="05" carrier="Jawwal WAP" apn="wap" port="8080" proxy="213.244.118.129" type="default,supl"/>
-  <apn mcc="425" mnc="07" carrier="Hot Mobile" apn="net.hotm" type="default,supl"/>
-  <apn mcc="425" mnc="07" carrier="Hot Mobile MMS" apn="mms.hotm" mmsc="http://mms.hotmobile.co.il" mmsport="80" type="mms"/>
   <apn mcc="425" mnc="08" carrier="Golan Telecom" apn="internet.golantelecom.net.il" authtype="0" type="default,supl"/>
   <apn mcc="425" mnc="08" carrier="Golan Telecom MMS" apn="mms.golantelecom.net.il" authtype="0" mmsc="http://mmsc.golantelecom.co.il" mmsport="80" mmsproxy="10.224.228.81" type="mms"/>
   <apn mcc="425" mnc="14" carrier="YouPhone 3G" apn="data.youphone.co.il" mmsc="http://192.168.220.15/servlets/mms" mmsport="80" type="default,supl,mms"/>
