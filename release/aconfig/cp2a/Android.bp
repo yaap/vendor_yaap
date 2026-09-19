@@ -23,5 +23,6 @@ aconfig_value_set {
         "aconfig-values-cp2a-android.media.tv.flags-all",
         "aconfig-values-cp2a-com.android.graphics.hwui.flags-all",
         "aconfig-values-cp2a-com.android.bluetooth.flags-all",
+        "aconfig-values-lineage-cp2a-android.provider-all",
     ],
 }
