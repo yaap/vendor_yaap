@@ -20,9 +20,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Strings for PixelPropUtils -->
     <string name="cert_device">blazer</string>
-    <string name="cert_fp">google/blazer_beta/blazer:CANARY/ZP11.260717.006/16004061:user/release-keys</string>
+    <string name="cert_fp">google/blazer_beta/blazer:CANARY/ZP11.260821.010/16290768:user/release-keys</string>
     <string name="cert_model">Pixel 10 Pro</string>
     <string name="cert_manufacturer">Google</string>
-    <string name="cert_spl">2026-08-05</string>
+    <string name="cert_spl">2026-09-05</string>
     <string name="cert_sdk">32</string>
 </resources>
