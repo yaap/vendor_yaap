@@ -38,6 +38,7 @@ file_path=$1
 file_dir=$(dirname "$file_path")
 file_name=$(basename "$file_path")
 device_code=$(echo "${file_name}" | cut -d'-' -f4)
+base_url="https://downloads.yaaprom.org"
 
 if ! [ -f "$file_path" ]; then
     echo -e "${RED}File does not exist${NC}"
@@ -74,13 +75,17 @@ if payload_properties=$(unzip -p "$file_path" payload_properties.txt); then
 fi
 # get date from props
 datetime=$(grep "ro.build.date.utc" "${file_dir}/system/build.prop" | cut -d '=' -f 2)
+file_url="${base_url}/${device_code}/${file_name}"
+[[ ! $TARGET_BUILD_GAPPS ]] && file_url="${base_url}/${device_code}/vanilla/${file_name}"
 
 {
     echo    "{"
     echo    "  \"response\": ["
     echo    "    {"
     echo    "      \"datetime\": ${datetime},"
-    echo -n "      \"filename\": \"${file_name}\""
+    echo    "      \"filename\": \"${file_name}\","
+    echo    "      \"url\": \"${file_url}\","
+    echo -n "      \"sha256url\": \"${file_url}.sha256sum\""
 } > "${file_path}.json"
 if [[ $isPayload == 1 ]]; then
     {
