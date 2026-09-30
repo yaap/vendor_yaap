@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<!-- URL base to find the full zip files, %s is replaced to be property_device value. -->
-	<string name="url_base_full" formatted="false">https://mirror.codebucket.de/yaap/%s/vanilla/</string>
+	<string name="url_base_full" formatted="false">https://downloads.yaaprom.org/%s/vanilla/</string>
 
 	<!-- the branch name to format URLs with -->
 	<string name="url_branch_name">vanilla-signed</string>
