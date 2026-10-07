@@ -1,5 +1,5 @@
 PRODUCT_PACKAGES += \
-    ThemePicker \
+    ThemePicker
 
 # Extra tools in YAAP
 PRODUCT_PACKAGES += \
@@ -37,6 +37,7 @@ PRODUCT_PACKAGES += \
     Aperture \
     AvatarPicker \
     Camelot \
+    Canvas \
     ExactCalculator \
     Glimpse \
     MatLog \
