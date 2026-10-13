@@ -29,9 +29,7 @@ findPayloadOffset() {
 
 if ! [ "$1" ]; then
     echo -e "${RED}No file provided${NC}"
-    if ! return 0 &> /dev/null; then
-        exit 0
-    fi
+    exit 0
 fi
 
 file_path=$1
@@ -42,9 +40,7 @@ base_url="https://downloads.yaaprom.org"
 
 if ! [ -f "$file_path" ]; then
     echo -e "${RED}File does not exist${NC}"
-    if ! return 0 &> /dev/null; then
-        exit 0
-    fi
+    exit 0
 fi
 
 # only generate for official builds. unless forced with 'export FORCE_JSON=1'
@@ -59,9 +55,7 @@ fi
 
 if [[ $isOfficial != 1 ]]; then
     echo -e "${YELLOW}Skipped generating json for a non-official build${NC}"
-    if ! return 0 &> /dev/null; then
-        exit 0
-    fi
+    exit 0
 fi
 
 echo -e "${GREEN}Generating ${YELLOW}${device_code}.json${NC}"
