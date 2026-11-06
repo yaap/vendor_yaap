@@ -53,6 +53,9 @@ ifeq ($(TARGET_BUILD_VARIANT), user)
     PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 endif
 
+# Use one scudo TSD per CPU
+MALLOC_SCUDO_TSDS_MAX := true
+
 # YAAP private configuration - optional.
 #$(call inherit-product-if-exists, vendor/yaap-priv/product.mk)
 
